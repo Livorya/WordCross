@@ -4,7 +4,8 @@ INSERT INTO subject (id, name) VALUES
     (1, 'Animals'),
     (2, 'Sport'),
     (3, 'Programming'),
-    (4, 'Music');
+    (4, 'Music')
+    (5, 'Movies');
 
 -- Animals
 INSERT INTO word (name, hint, subject_id) VALUES
@@ -217,3 +218,58 @@ INSERT INTO word (name, hint, subject_id) VALUES
     ('Folk', 'Traditional music from a specific culture.', 4),
     ('Electronic', 'Music produced using electronic devices.', 4),
     ('Soundtrack', 'Music accompanying a film or show.', 4);
+
+-- Movies
+INSERT INTO word (name, hint, subject_id) VALUES
+    ('Inception', 'Dream within a dream.', 5),
+    ('Titanic', 'Ship sinks after iceberg collision.', 5),
+    ('Avatar', 'Aliens on Pandora.', 5),
+    ('The Matrix', 'Reality is simulated.', 5),
+    ('The Godfather', 'Mafia family saga.', 5),
+    ('Forrest Gump', 'Man with a simple life philosophy.', 5),
+    ('The Dark Knight', 'Batman battles Joker.', 5),
+    ('Star Wars', 'Space opera with Jedi knights.', 5),
+    ('The Shawshank Redemption', 'Escape from prison.', 5),
+    ('Schindler''s List', 'True story of a Nazi sympathizer.', 5),
+    ('Pulp Fiction', 'Interwoven tales in LA.', 5),
+    ('Gladiator', 'A soldier becomes a gladiator.', 5),
+    ('The Lion King', 'African jungle, royal family drama.', 5),
+    ('Jaws', 'A shark terrorizes a beach town.', 5),
+    ('The Avengers', 'Superheroes unite to save Earth.', 5),
+    ('The Silence of the Lambs', 'FBI agent seeks help from a cannibal.', 5),
+    ('Fight Club', 'Unconventional support group turns violent.', 5),
+    ('The Terminator', 'A cyborg sent from the future.', 5),
+    ('Casablanca', 'Love during WWII in Morocco.', 5),
+    ('Citizen Kane', 'The rise and fall of a publishing tycoon.', 5),
+    ('Psycho', 'Horror thriller at Bates Motel.', 5),
+    ('The Wizard of Oz', 'Journey to the magical land of Oz.', 5),
+    ('E.T.', 'Alien befriends a boy on Earth.', 5),
+    ('Back to the Future', 'Time travel in a DeLorean car.', 5),
+    ('The Godfather: Part II', 'Mafia story continues with flashbacks.', 5),
+    ('The Green Mile', 'A death row inmate has mysterious powers.', 5),
+    ('Goodfellas', 'A rise and fall in the mafia world.', 5),
+    ('The Prestige', 'Two magicians compete for supremacy.', 5),
+    ('Interstellar', 'Space journey to save humanity.', 5),
+    ('The Pianist', 'A Jewish pianist in WWII-era Poland.', 5),
+    ('12 Angry Men', 'A jury deliberates a murder case.', 5),
+    ('Star Wars: Episode V - The Empire Strikes Back', 'The rebels face Darth Vader.', 5),
+    ('The Social Network', 'Creation of Facebook.', 5),
+    ('A Beautiful Mind', 'The story of a brilliant mathematician.', 5),
+    ('The Great Gatsby', 'A man pursues his lost love in the Roaring Twenties.', 5),
+    ('Se7en', 'Two detectives hunt a serial killer.', 5),
+    ('The Departed', 'Undercover cops infiltrate a crime family.', 5),
+    ('The Revenant', 'A frontiersman seeks revenge after being left for dead.', 5),
+    ('Frozen', 'Two sisters struggle with magical powers.', 5),
+    ('The Dark Knight Rises', 'Batman returns to face new challenges.', 5),
+    ('Memento', 'A man with short-term memory loss seeks revenge.', 5),
+    ('Shutter Island', 'A U.S. Marshal investigates a mental hospital.', 5),
+    ('Blade Runner', 'A dystopian future with bio-engineered beings.', 5),
+    ('The Big Lebowski', 'A laid-back man is mistaken for a millionaire.', 5),
+    ('The Matrix Reloaded', 'The fight against machines continues.', 5),
+    ('Mad Max: Fury Road', 'Apocalyptic action in a desert wasteland.', 5),
+    ('The Incredibles', 'Superheroes live secretly as a family.', 5),
+    ('Jurassic Park', 'Dinosaurs revived on an island theme park.', 5),
+    ('The Hunger Games', 'Teenagers battle in a televised competition.', 5),
+    ('Avengers: Endgame', 'Superheroes attempt to undo a tragic event.', 5),
+    ('Spider-Man: No Way Home', 'Spider-Man faces challenges across realities.', 5),
+    ('Deadpool', 'A mercenary gains healing powers and seeks revenge.', 5);
