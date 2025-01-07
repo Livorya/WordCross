@@ -30,6 +30,11 @@ body {
     color: whitesmoke;
     text-align: center;
     font-size: 1.5rem;   
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 h1, h2, h3, h4 {
     margin: 0;
@@ -39,7 +44,7 @@ h1, h2, h3, h4 {
     font-family: 'Lilita One';
     font-size: 4.6rem;
     margin: 0;
-    margin-bottom: -18px
+    margin-bottom: -18px;
 }
 
 .associationTitle {
@@ -104,6 +109,7 @@ h1, h2, h3, h4 {
 .player2Container {
     grid-area: player2Container;
     
+    height: 50vh;
     border: 6px dashed var(--player-pink-700);
     background-color: var(--purple-800);
     margin-bottom: 10px;
@@ -113,6 +119,52 @@ h1, h2, h3, h4 {
         flex-direction: column;
         text-align: left;
         padding: 0px 10px;
+}
+
+
+.playerInput {
+    color: ghostwhite;
+    border-radius: 15px;
+    font-size: 0.5;
+    padding: 10px 10px;
+    margin: 5px 0px;
+    border: none;
+}
+.playerInput::placeholder {
+    font-family: 'Quicksand';
+    font-weight: 600;
+    color: ghostwhite;
+    text-align: center;
+}
+
+
+#player1Input {
+    background-color: var(--player-blue-700);
+}
+#player1Input:hover {
+    background-color: var(--player-blue-800);
+    transition: 0.3s ease;
+}
+
+#player2Input {
+    background-color: var(--player-pink-700);
+}
+#player2Input:hover {
+    background-color: var(--player-pink-800);
+    transition: 0.3s ease;
+}
+
+#player1Score {
+    background-color: var(--purple-800);
+    border-radius: 10px;
+    padding: 0px 5px;
+    font-size: 1.5rem;
+}
+#player2Score {
+    background-color: var(--purple-800);
+    border-radius: 10px;
+    padding: 0px 5px;
+    font-size: 1.5rem;
 }
 
 .timer {
@@ -130,49 +182,4 @@ h1, h2, h3, h4 {
 }
     #timer {
         font-size: 2rem;
-}
-
-.playerInput {
-    color: ghostwhite;
-    border-radius: 15px;
-    font-size: 0.5;
-    padding: 10px 10px;
-    margin: 5px 0px;
-    border: none;
-}
-    .playerInput::placeholder {
-        font-family: 'Quicksand';
-        font-weight: 600;
-        color: ghostwhite;
-        text-align: center;
-}
-    
-
-#player1Input {
-    background-color: var(--player-blue-700);
-}
-    #player1Input:hover {
-        background-color: var(--player-blue-800);
-        transition: 0.3s ease;
-    }
-
-#player2Input {
-    background-color: var(--player-pink-700);
-}
-    #player2Input:hover {
-    background-color: var(--player-pink-800);
-    transition: 0.3s ease;
-}
-
-#player1Score {
-    background-color: var(--purple-800);
-    border-radius: 10px;
-    padding: 0px 5px;
-    font-size: 1.5rem;
-}
-#player2Score {
-    background-color: var(--purple-800);
-    border-radius: 10px;
-    padding: 0px 5px;
-    font-size: 1.5rem;
 }
