@@ -96,6 +96,7 @@ ul {
     border: 6px dashed var(--player-blue-700);
     background-color: var(--purple-800);
     margin-bottom: 10px;
+    box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
     
     overflow-y:auto;
     scrollbar-width: thin;
@@ -116,6 +117,7 @@ ul {
     background-color: var(--purple-800);
     margin: 0px 15px;
     padding: 5px;
+    box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
 
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -132,6 +134,7 @@ ul {
     border: 6px dashed var(--player-pink-700);
     background-color: var(--purple-800);
     margin-bottom: 10px;
+    box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
 
     overflow-y:auto;
     scrollbar-width: thin;
@@ -151,6 +154,7 @@ ul {
     padding: 10px 10px;
     margin: 5px 0px;
     border: none;
+    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.4);
 }
 .playerInput::placeholder {
     font-family: 'Quicksand';
