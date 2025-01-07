@@ -11,13 +11,18 @@
 </head>
 
 <body>
-    <h1>Word!</h1>
-    <h1>Association</h1>
+    <h1 class="wordTitle">Word!</h1>
+    <h1 class="associationTitle">Association</h1>
 
 <section class="gameplayScreen">
+
     <section class="player1Container">
-    <div class="playerWordField">Wordfield</div>
-    <div class="playerScoreField">Scorefield</div>
+        <div class="playerWordField">Wordfield</div>
+        
+            <ul></ul>     <!--words from player1Input gets added to <ul>-->
+        
+        <div class="playerScoreField">Scorefield</div>
+        <input id="player1Input" class="playerInput" type="text" placeholder="Enter your text">
     </section>
     
     <section class="gameboardContainer">
@@ -26,7 +31,11 @@
 
     <section class="player2Container">
         <div class="playerWordField">Wordfield</div>
+
+            <ul></ul>     <!--words from player2Input gets added to <ul>-->
+        
         <div class="playerScoreField">Scorefield</div>
+        <input id="player2Input" class="playerInput" type="text" placeholder="Enter your guess"
     </section>
 
     <section class="timer">Timer</section>

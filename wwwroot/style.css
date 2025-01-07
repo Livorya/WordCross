@@ -1,7 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&family=Lilita+One&display=swap');
+
+:root {
+    --purple-800: #471980;
+    --purple-700: #6b21a8;
+
+    --fuchsia-800: #c026d3;
+    --fuchsia-700: #d946ef;
+    --fuchsia-600: #e879f9;
+    
+    --player-pink-800: #be185d;
+    --player-pink-700: #ec4899;;
+    
+    --green-800: #16a34a;
+    --green-700: #22c55e;
+    
+    --player-blue-800: #0284c7;
+    --player-blue-700: #0ea5e9;
+
+    --orange-800: #ea580c;
+    --orange-700: #f97316;
+
+    --yellow-800: #eab308;
+    --yellow-700: #facc15;
+}
+
+
+
 
 body {
-    background-color: lavender;
+    background-color: var(--purple-700);
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    text-align: center;
+}
 
+.wordTitle {
+    font-family: 'Lilita One';
+    font-size: 4.6rem;
+    margin: 0;
+    margin-bottom: -18px
+}
+
+.associationTitle {
+    font-family: 'Lilita One';
+    font-size: 2.4rem;
+    letter-spacing: 0.05rem;
+    margin: 0;
 }
 
 .gameplayScreen {
@@ -12,20 +56,42 @@ body {
     "player1Container gameboardContainer player2Container"
     "player1Container timer player2Container";
 
+    margin-top: 25px;
+
 }
 
 .player1Container {
     grid-area: player1Container;
+    
+    border: 4px dashed var(--player-blue-700);
+    background-color: var(--purple-800);
 }
 
 .gameboardContainer {
     grid-area: gameboardContainer;
+    
+    border: 4px dashed var(--green-700);
+    background-color: var(--purple-800);
+    margin: 0px 15px;
+
+    
 }
 
 .player2Container {
     grid-area: player2Container;
+    
+    border: 4px dashed var(--player-pink-700);
+    background-color: var(--purple-800);
 }
 
 .timer {
     grid-area: timer;
+    font-weight: bold;
+    margin-top:10px;
+}
+
+.playerInput {
+    border-radius: 10px;
+    border: none;
+    
 }
