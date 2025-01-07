@@ -1,4 +1,31 @@
 
 body {
     background-color: lavender;
+
+}
+
+.gameplayScreen {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    grid-template-areas: 
+    "player1Container gameboardContainer player2Container"
+    "player1Container timer player2Container";
+
+}
+
+.player1Container {
+    grid-area: player1Container;
+}
+
+.gameboardContainer {
+    grid-area: gameboardContainer;
+}
+
+.player2Container {
+    grid-area: player2Container;
+}
+
+.timer {
+    grid-area: timer;
 }
