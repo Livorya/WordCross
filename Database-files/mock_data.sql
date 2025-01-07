@@ -1,4 +1,14 @@
-﻿
+﻿INSERT INTO subject (name) VALUES
+    ('Animals');
+
+INSERT INTO subject (name) VALUES
+    ('Sport');
+
+INSERT INTO subject (name) VALUES
+    ('Programming');
+
+INSERT INTO subject (name) VALUES
+    ('Music');
 
 -- Animal
 INSERT INTO word (name, hint, subject_id) VALUES
@@ -155,4 +165,59 @@ INSERT INTO word (name, hint, subject_id) VALUES
       ('Regex', 'I match patterns like a language of its own.', 3),
       ('Assembly', 'I’m the closest you’ll get to speaking to a machine.', 3);
 
-
+-- Music
+INSERT INTO word (name, hint, subject_id) VALUES
+    ('Piano', 'Large keyboard instrument.', 4),
+    ('Guitar', 'Stringed instrument, played by strumming.', 4),
+    ('Drums', 'Percussion instrument played with sticks or hands.', 4),
+    ('Violin', 'String instrument played with a bow.', 4),
+    ('Trumpet', 'Brass instrument with valves.', 4),
+    ('Saxophone', 'Brass wind instrument used in jazz.', 4),
+    ('Flute', 'Woodwind instrument played by blowing across a hole.', 4),
+    ('Cello', 'Large string instrument with a deep sound.', 4),
+    ('Bass', 'Low-pitched string instrument.', 4),
+    ('Clarinet', 'Woodwind instrument with a single reed.', 4),
+    ('Harp', 'Stringed instrument played by plucking.', 4),
+    ('Oboe', 'Double-reed woodwind instrument.', 4),
+    ('Timpani', 'Kettledrums, used in orchestras.', 4),
+    ('Accordion', 'Instrument with bellows and keys/buttons.', 4),
+    ('Xylophone', 'Percussion instrument with wooden bars.', 4),
+    ('Tambourine', 'Small percussion instrument with jingles.', 4),
+    ('Maracas', 'Rattles used as percussion instruments.', 4),
+    ('Keyboard', 'Electronic musical instrument with keys.', 4),
+    ('Flugelhorn', 'Brass instrument with a mellow sound.', 4),
+    ('Mandolin', 'Stringed instrument with a rounded body.', 4),
+    ('Banjo', 'Stringed instrument with a drum-like body.', 4),
+    ('Fiddle', 'Another name for a violin in folk music.', 4),
+    ('Acoustic', 'Musical instrument that doesn’t need amplification.', 4),
+    ('Electric', 'Instrument that requires electronic amplification.', 4),
+    ('Chord', 'Two or more notes played together.', 4),
+    ('Scale', 'Sequence of notes in a specific order.', 4),
+    ('Rhythm', 'Pattern of beats in music.', 4),
+    ('Melody', 'A sequence of notes that form a tune.', 4),
+    ('Harmony', 'Combination of notes played together.', 4),
+    ('Key', 'The tonal center of a piece of music.', 4),
+    ('Tempo', 'The speed of a piece of music.', 4),
+    ('Cadence', 'The ending of a musical phrase.', 4),
+    ('Dynamics', 'Variation in loudness of music.', 4),
+    ('Articulation', 'How notes are played or sung.', 4),
+    ('Interval', 'Distance between two musical notes.', 4),
+    ('Octave', 'Doubling or halving the frequency of a note.', 4),
+    ('Chorus', 'The repeated part of a song.', 4),
+    ('Verse', 'Part of a song with lyrics that tell a story.', 4),
+    ('Bridge', 'Contrasting section in a song.', 4),
+    ('Song', 'A musical composition with lyrics.', 4),
+    ('Opera', 'A dramatic work combining singing and music.', 4),
+    ('Symphony', 'Large orchestral composition, usually in four movements.', 4),
+    ('Concerto', 'Composition for a soloist and orchestra.', 4),
+    ('Sonata', 'A composition for one or more instruments, typically three or four movements.', 4),
+    ('Jazz', 'Genre of music known for improvisation.', 4),
+    ('Blues', 'Genre of music with a melancholic tone.', 4),
+    ('Rock', 'Genre with electric guitars and strong rhythms.', 4),
+    ('Classical', 'Western music tradition from the 18th-19th centuries.', 4),
+    ('Pop', 'Mainstream music with catchy melodies.', 4),
+    ('Hip Hop', 'Music with rhythmic speech and beats.', 4),
+    ('Reggae', 'Jamaican music with a steady beat.', 4),
+    ('Folk', 'Traditional music from a specific culture.', 4),
+    ('Electronic', 'Music produced using electronic devices.', 4),
+    ('Soundtrack', 'Music accompanying a film or show.', 4);
