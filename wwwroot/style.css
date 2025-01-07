@@ -49,6 +49,7 @@ ul {
     background-color: var(--purple-800);
     border: 6px dashed var(--fuchsia-800);
     padding: 5px 50px;
+    margin-bottom: 20px;
 }
 
 .wordTitle {
@@ -63,6 +64,18 @@ ul {
     font-size: 2.4rem;
     letter-spacing: 0.05rem;
     margin: 0;
+}
+
+#subjectTitle {
+    margin: 0 auto;
+    margin-bottom: -65px;
+    font-family: 'Fredoka', cursive;
+    font-size: 2.3rem;
+    font-weight: 600;
+    background-color: var(--green-700);
+    border-radius: 15px;
+    width: 200px;
+    z-index: 1;
 }
 
 .gameplayScreen {
@@ -102,17 +115,10 @@ ul {
     border: 6px dashed var(--green-700);
     background-color: var(--purple-800);
     margin: 0px 15px;
+
+    
 }
-    .gameboardContainer h1 {
-        margin: 0 auto;
-        margin-top: -25px;
-        font-family: 'Fredoka', cursive;
-        font-size: 2.3rem;
-        font-weight: 600;
-        background-color: var(--green-700);
-        border-radius: 15px;
-        width: 200px;
-}
+
 
 .player2Container {
     grid-area: player2Container;
@@ -133,7 +139,6 @@ ul {
         padding: 0px 10px;
 }
 
-
 .playerInput {
     color: ghostwhite;
     border-radius: 15px;
@@ -148,7 +153,6 @@ ul {
     color: ghostwhite;
     text-align: center;
 }
-
 
 #player1Input {
     background-color: var(--player-blue-700);
