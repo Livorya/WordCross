@@ -17,29 +17,53 @@
 <section class="gameplayScreen">
 
     <section class="player1Container">
-        <div class="playerWordField">Wordfield</div>
+        <h4>Incorrect</h4>
+        <div class="playerWordField"></div>
         
-            <ul></ul>     <!--words from player1Input gets added to <ul>-->
+            <ul id="player1IncorrectWords">
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+            </ul>     <!--words from player1Input gets added to <ul>-->
         
         
     </section>
 
-    <section id="player1ScoreField">Scorefield
-        <input id="player1Input" class="playerInput" type="text" placeholder="Enter your text">
+    <section id="player1ScoreField">
+        <div>
+            <h3>Score: <span id="player1Score">12 pts</span></h3>
+        </div>
+        <input id="player1Input" class="playerInput" type="text" placeholder="Keep on guessing..">
     </section>
 
     <section class="gameboardContainer">
-    <h1>Gameboard</h1>
+    <h1>Nature</h1>
     </section>
 
     <section class="player2Container">
-        <div class="playerWordField">Wordfield</div>
+        <h4>Incorrect</h4>
+        <div class="playerWordField"></div>
 
-            <ul></ul>     <!--words from player2Input gets added to <ul>-->
+            <ul id="player2IncorrectWords"></ul>     <!--words from player2Input gets added to <ul>-->
     </section>
 
-    <section id="player2ScoreField">Scorefield
-        <input id="player2Input" class="playerInput" type="text" placeholder="Enter your guess">
+    <section id="player2ScoreField">
+        <div>
+            <h3>Score: <span id="player2Score">10 pts</span></h3>
+        </div>
+        <input id="player2Input" class="playerInput" type="text" placeholder="Keep on guessing..">
     </section>
 
     <section class="timer"><span id="timer">00:27</span></section>

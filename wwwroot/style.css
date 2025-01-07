@@ -24,15 +24,15 @@
     --yellow-700: #facc15;
 }
 
-
-
-
 body {
     background-color: var(--purple-700);
     font-family: 'Quicksand', Arial, Helvetica, sans-serif;
     color: whitesmoke;
     text-align: center;
-    font-size: 1.5rem
+    font-size: 1.5rem;   
+}
+h1, h2, h3, h4 {
+    margin: 0;
 }
 
 .wordTitle {
@@ -58,32 +58,61 @@ body {
     "player1Container gameboardContainer player2Container"
     "player1Scorefield timer player2Scorefield";
 
-    margin-top: 25px;
-
+    margin-top: 40px;
 }
 
 .player1Container {
     grid-area: player1Container;
-    
-    border: 4px dashed var(--player-blue-700);
+    height: 50vh;
+    border: 6px dashed var(--player-blue-700);
     background-color: var(--purple-800);
+    margin-bottom: 10px;
+    
+    overflow-y:auto;
+    scrollbar-width: thin;
+    
+}
+.player1Container ul {
+    margin: 5px 0px;
+    list-style-type: none;
+    text-align: left;
+}
+    #player1ScoreField {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0px 10px;
 }
 
 .gameboardContainer {
     grid-area: gameboardContainer;
     
-    border: 4px dashed var(--green-700);
+    border: 6px dashed var(--green-700);
     background-color: var(--purple-800);
     margin: 0px 15px;
-
-    
+}
+    .gameboardContainer h1 {
+        margin: 0 auto;
+        margin-top: -20px;
+        font-family: 'Fredoka', cursive;
+        font-weight: 600;
+        background-color: var(--green-700);
+        border-radius: 15px;
+        width: 200px;
 }
 
 .player2Container {
     grid-area: player2Container;
     
-    border: 4px dashed var(--player-pink-700);
+    border: 6px dashed var(--player-pink-700);
     background-color: var(--purple-800);
+    margin-bottom: 10px;
+}
+    #player2ScoreField {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 0px 10px;
 }
 
 .timer {
@@ -99,24 +128,51 @@ body {
     background-color: var(--purple-800);
     border-radius: 25px;
 }
+    #timer {
+        font-size: 2rem;
+}
 
 .playerInput {
     color: ghostwhite;
     border-radius: 15px;
     font-size: 0.5;
     padding: 10px 10px;
-    margin: 5px 10px;
+    margin: 5px 0px;
     border: none;
 }
-
-.playerInput::placeholder {
-    color: ghostwhite;
+    .playerInput::placeholder {
+        font-family: 'Quicksand';
+        font-weight: 600;
+        color: ghostwhite;
+        text-align: center;
 }
+    
 
 #player1Input {
     background-color: var(--player-blue-700);
 }
+    #player1Input:hover {
+        background-color: var(--player-blue-800);
+        transition: 0.3s ease;
+    }
 
 #player2Input {
     background-color: var(--player-pink-700);
+}
+    #player2Input:hover {
+    background-color: var(--player-pink-800);
+    transition: 0.3s ease;
+}
+
+#player1Score {
+    background-color: var(--purple-800);
+    border-radius: 10px;
+    padding: 0px 5px;
+    font-size: 1.5rem;
+}
+#player2Score {
+    background-color: var(--purple-800);
+    border-radius: 10px;
+    padding: 0px 5px;
+    font-size: 1.5rem;
 }
