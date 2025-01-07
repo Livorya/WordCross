@@ -52,10 +52,11 @@ body {
 .gameplayScreen {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
     "player1Container gameboardContainer player2Container"
-    "player1Container timer player2Container";
+    "player1Container gameboardContainer player2Container"
+    "player1Scorefield timer player2Scorefield";
 
     margin-top: 25px;
 
@@ -87,16 +88,35 @@ body {
 
 .timer {
     grid-area: timer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
+    margin: 0 auto;
     margin-top:10px;
+    height: 50px;
+    width: 200px;
+    background-color: var(--purple-800);
+    border-radius: 25px;
 }
 
-.player1nput {
-    background-color: var(--purple-800);
+.playerInput {
     color: ghostwhite;
-    border-radius: 30px;
-    border: 2px solid var(--player-pink-700);
+    border-radius: 15px;
     font-size: 0.5;
-    padding: 5px 10px;
+    padding: 10px 10px;
     margin: 5px 10px;
+    border: none;
+}
+
+.playerInput::placeholder {
+    color: ghostwhite;
+}
+
+#player1Input {
+    background-color: var(--player-blue-700);
+}
+
+#player2Input {
+    background-color: var(--player-pink-700);
 }
