@@ -75,8 +75,12 @@ h1, h2, h3, h4 {
     
     overflow-y:auto;
     scrollbar-width: thin;
-    
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--player-blue-700) var(--purple-700);
+    scrollbar-highlight-color: var(--player-blue-800);
 }
+
 .player1Container ul {
     margin: 5px 0px;
     list-style-type: none;
