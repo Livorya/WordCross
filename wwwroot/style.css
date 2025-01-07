@@ -73,8 +73,8 @@ ul {
     font-size: 2.3rem;
     font-weight: 600;
     background-color: var(--green-700);
-    border-radius: 15px;
-    width: 200px;
+    border-radius: 17px;
+    padding: 2px 20px;
     z-index: 1;
 }
 
@@ -115,10 +115,15 @@ ul {
     border: 6px dashed var(--green-700);
     background-color: var(--purple-800);
     margin: 0px 15px;
+    padding: 5px;
 
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
     
 }
-
 
 .player2Container {
     grid-area: player2Container;
@@ -141,7 +146,7 @@ ul {
 
 .playerInput {
     color: ghostwhite;
-    border-radius: 15px;
+    border-radius: 12px;
     font-size: 0.5;
     padding: 10px 10px;
     margin: 5px 0px;
@@ -194,7 +199,7 @@ ul {
     height: 50px;
     width: 200px;
     background-color: var(--purple-800);
-    border-radius: 25px;
+    border-radius: 17px;
 }
     #timer {
         font-size: 2rem;
