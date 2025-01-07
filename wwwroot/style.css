@@ -1,4 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&family=Lilita+One&display=swap');
+
+:root {
+    --purple-800: #471980;
+    --purple-700: #6b21a8;
+
+    --fuchsia-800: #c026d3;
+    --fuchsia-700: #d946ef;
+    --fuchsia-600: #e879f9;
+    
+    --player-pink-800: #be185d;
+    --player-pink-700: #ec4899;;
+    
+    --green-800: #16a34a;
+    --green-700: #22c55e;
+    
+    --player-blue-800: #0284c7;
+    --player-blue-700: #0ea5e9;
+
+    --orange-800: #ea580c;
+    --orange-700: #f97316;
+
+    --yellow-800: #eab308;
+    --yellow-700: #facc15;
+}
 
 body {
-    background-color: lavender;
+    background-color: var(--purple-700);
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 1.5rem;   
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1, h2, h3, h4 {
+    margin: 0;
+}
+ul {
+    margin: 5px 0px;
+    list-style-type: none;
+    text-align: left;
+}
+
+.header {
+    background-color: var(--purple-800);
+    border: 6px dashed var(--fuchsia-800);
+    padding: 5px 50px;
+    margin-bottom: 20px;
+    box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.wordTitle {
+    font-family: 'Lilita One';
+    font-size: 4.6rem;
+    margin: 0;
+    margin-bottom: -18px;
+}
+
+.associationTitle {
+    font-family: 'Lilita One';
+    font-size: 2.4rem;
+    letter-spacing: 0.05rem;
+    margin: 0;
+}
+
+#subjectTitle {
+    margin: 0 auto;
+    margin-bottom: -65px;
+    font-family: 'Fredoka', cursive;
+    font-size: 2.3rem;
+    font-weight: 600;
+    background-color: var(--green-700);
+    border-radius: 17px;
+    padding: 2px 20px;
+    box-shadow: 0px 3px 0 rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.gameplayScreen {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "player1Container gameboardContainer player2Container"
+    "player1Container gameboardContainer player2Container"
+    "player1Scorefield timer player2Scorefield";
+
+    margin-top: 40px;
+}
+
+.player1Container {
+    grid-area: player1Container;
+    height: 50vh;
+    border: 6px dashed var(--player-blue-700);
+    background-color: var(--purple-800);
+    margin-bottom: 10px;
+    box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
+    
+    overflow-y:auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--player-blue-700) var(--purple-700);
+    scrollbar-highlight-color: var(--player-blue-800);
+}
+    .player1ScoreField {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0px 10px;
+}
+
+.gameboardContainer {
+    grid-area: gameboardContainer;
+    
+    border: 6px dashed var(--green-700);
+    background-color: var(--purple-800);
+    margin: 0px 15px;
+    padding: 5px;
+    box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    
+}
+
+.player2Container {
+    grid-area: player2Container;
+    
+    height: 50vh;
+    border: 6px dashed var(--player-pink-700);
+    background-color: var(--purple-800);
+    margin-bottom: 10px;
+    box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
+
+    overflow-y:auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--player-pink-700) var(--purple-700);
+}
+    .player2ScoreField {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 0px 10px;
+}
+
+.playerInput {
+    color: ghostwhite;
+    border-radius: 12px;
+    font-size: 0.5;
+    padding: 10px 10px;
+    margin: 5px 0px;
+    border: none;
+    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.4);
+}
+.playerInput::placeholder {
+    font-family: 'Quicksand';
+    font-weight: 600;
+    color: ghostwhite;
+    text-align: center;
+}
+
+#player1Input {
+    background-color: var(--player-blue-700);
+}
+#player1Input:hover {
+    background-color: var(--player-blue-800);
+    transition: 0.3s ease;
+}
+
+#player2Input {
+    background-color: var(--player-pink-700);
+}
+#player2Input:hover {
+    background-color: var(--player-pink-800);
+    transition: 0.3s ease;
+}
+
+#player1Score {
+    background-color: var(--purple-800);
+    border-radius: 10px;
+    padding: 0px 5px;
+    font-size: 1.5rem;
+}
+#player2Score {
+    background-color: var(--purple-800);
+    border-radius: 10px;
+    padding: 0px 5px;
+    font-size: 1.5rem;
+}
+
+.timer {
+    grid-area: timer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top:10px;
+    height: 50px;
+    width: 120px;
+    background-color: var(--purple-800);
+    border-radius: 17px;
+}
+    #timer {
+        font-size: 2rem;
 }

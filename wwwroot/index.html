@@ -4,13 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordapp</title>
+    <title>Word!Association</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Word Cross</h1>
+<section class="header">
+    <h1 class="wordTitle">Word!</h1>
+    <h1 class="associationTitle">Association</h1>
+</section>
+
+<h1 id="subjectTitle">Nature</h1>
+
+<section class="gameplayScreen">
+
+    <section class="player1Container">
+        <h4>Incorrect</h4>
+        <div class="playerWordField"></div>
+        
+            <ul id="player1IncorrectWords">
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+            </ul>     <!--words from player1Input gets added to <ul>-->
+        
+        
+    </section>
+
+    <section class="player1ScoreField">
+        <div>
+            <h3>Score: <span id="player1Score">12 pts</span></h3>
+        </div>
+        <input id="player1Input" class="playerInput" type="text" placeholder="Keep on guessing..">
+    </section>
+
+    <section class="gameboardContainer">
+    </section>
+
+    <section class="player2Container">
+        <h4>Incorrect</h4>
+        <div class="playerWordField"></div>
+
+            <ul id="player2IncorrectWords">
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+                <li>Ord</li>
+            </ul>     <!--words from player2Input gets added to <ul>-->
+    </section>
+
+    <section class="player2ScoreField">
+        <div>
+            <h3>Score: <span id="player2Score">10 pts</span></h3>
+        </div>
+        <input id="player2Input" class="playerInput" type="text" placeholder="Keep on guessing..">
+    </section>
+
+    <section class="timer"><span id="timer">00:27</span></section>
+
+</section>
 </body>
 </html>
