@@ -50,6 +50,7 @@ ul {
     border: 6px dashed var(--fuchsia-800);
     padding: 5px 50px;
     margin-bottom: 20px;
+    box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 .wordTitle {
@@ -75,6 +76,7 @@ ul {
     background-color: var(--green-700);
     border-radius: 17px;
     padding: 2px 20px;
+    box-shadow: 0px 3px 0 rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
@@ -103,7 +105,7 @@ ul {
     scrollbar-color: var(--player-blue-700) var(--purple-700);
     scrollbar-highlight-color: var(--player-blue-800);
 }
-    #player1ScoreField {
+    .player1ScoreField {
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -140,7 +142,7 @@ ul {
     scrollbar-width: thin;
     scrollbar-color: var(--player-pink-700) var(--purple-700);
 }
-    #player2ScoreField {
+    .player2ScoreField {
         display: flex;
         flex-direction: column;
         text-align: left;
