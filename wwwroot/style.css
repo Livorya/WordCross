@@ -39,6 +39,17 @@ body {
 h1, h2, h3, h4 {
     margin: 0;
 }
+ul {
+    margin: 5px 0px;
+    list-style-type: none;
+    text-align: left;
+}
+
+.header {
+    background-color: var(--purple-800);
+    border: 6px dashed var(--fuchsia-800);
+    padding: 5px 50px;
+}
 
 .wordTitle {
     font-family: 'Lilita One';
@@ -75,16 +86,8 @@ h1, h2, h3, h4 {
     
     overflow-y:auto;
     scrollbar-width: thin;
-
-    scrollbar-width: thin;
     scrollbar-color: var(--player-blue-700) var(--purple-700);
     scrollbar-highlight-color: var(--player-blue-800);
-}
-
-.player1Container ul {
-    margin: 5px 0px;
-    list-style-type: none;
-    text-align: left;
 }
     #player1ScoreField {
     display: flex;
@@ -102,8 +105,9 @@ h1, h2, h3, h4 {
 }
     .gameboardContainer h1 {
         margin: 0 auto;
-        margin-top: -20px;
+        margin-top: -25px;
         font-family: 'Fredoka', cursive;
+        font-size: 2.3rem;
         font-weight: 600;
         background-color: var(--green-700);
         border-radius: 15px;
@@ -117,6 +121,10 @@ h1, h2, h3, h4 {
     border: 6px dashed var(--player-pink-700);
     background-color: var(--purple-800);
     margin-bottom: 10px;
+
+    overflow-y:auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--player-pink-700) var(--purple-700);
 }
     #player2ScoreField {
         display: flex;
