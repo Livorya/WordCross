@@ -1,16 +1,12 @@
-﻿INSERT INTO subject (name) VALUES
-    ('Animals');
+﻿
+-- Subjects
+INSERT INTO subject (id, name) VALUES
+    (1, 'Animals'),
+    (2, 'Sport'),
+    (3, 'Programming'),
+    (4, 'Music');
 
-INSERT INTO subject (name) VALUES
-    ('Sport');
-
-INSERT INTO subject (name) VALUES
-    ('Programming');
-
-INSERT INTO subject (name) VALUES
-    ('Music');
-
--- Animal
+-- Animals
 INSERT INTO word (name, hint, subject_id) VALUES
       ('Elephant', 'Large and known for its memory.', 1),
       ('Cheetah', 'Speed defines this predator.', 1),
@@ -62,7 +58,7 @@ INSERT INTO word (name, hint, subject_id) VALUES
       ('Hyena', 'Known for its distinctive laugh.', 1),
       ('Gazelle', 'A swift and graceful plains animal.', 1);
 
--- Sport
+-- Sports
 INSERT INTO word (name, hint, subject_id) VALUES
       ('Soccer', 'A team sport involving a goal and teamwork.', 2),
       ('Basketball', 'A sport where height is often an advantage.', 2),
