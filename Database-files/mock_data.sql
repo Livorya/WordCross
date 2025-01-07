@@ -4,8 +4,9 @@ INSERT INTO subject (id, name) VALUES
     (1, 'Animals'),
     (2, 'Sport'),
     (3, 'Programming'),
-    (4, 'Music')
-    (5, 'Movies');
+    (4, 'Music'),
+    (5, 'Movies'),
+    (6, 'Universe');
 
 -- Animals
 INSERT INTO word (name, hint, subject_id) VALUES
@@ -273,3 +274,54 @@ INSERT INTO word (name, hint, subject_id) VALUES
     ('Avengers: Endgame', 'Superheroes attempt to undo a tragic event.', 5),
     ('Spider-Man: No Way Home', 'Spider-Man faces challenges across realities.', 5),
     ('Deadpool', 'A mercenary gains healing powers and seeks revenge.', 5);
+
+-- Universe
+INSERT INTO word (name, hint, subject_id) VALUES
+    ('Star', 'I shine from light-years away, but you see me as a tiny dot.', 6),
+    ('Planet', 'I orbit a giant, hosting mysteries on my surface.', 6),
+    ('Galaxy', 'I’m a collection of stars, spiraling in cosmic harmony.', 6),
+    ('Black Hole', 'I devour light, leaving only darkness behind.', 6),
+    ('Nebula', 'I’m a cloud of gas, birthing stars in the void.', 6),
+    ('Asteroid', 'I’m a rocky traveler, wandering the solar system.', 6),
+    ('Comet', 'I streak across the sky, leaving a fiery tail behind.', 6),
+    ('Supernova', 'I’m a star’s grand finale, an explosion of light.', 6),
+    ('Quasar', 'I’m a beacon powered by a hungry black hole.', 6),
+    ('Pulsar', 'I spin rapidly, sending rhythmic cosmic signals.', 6),
+    ('Constellation', 'I’m a pattern drawn in stars by ancient eyes.', 6),
+    ('Meteor', 'I blaze through the atmosphere, making a wish possible.', 6),
+    ('Moon', 'I’m a faithful companion, pulling tides on Earth.', 6),
+    ('Solar System', 'I’m home to a star and all that orbits it.', 6),
+    ('Light Year', 'I measure vast distances, beyond comprehension.', 6),
+    ('Aurora', 'I paint the polar skies with vibrant colors.', 6),
+    ('Exoplanet', 'I orbit stars far away, a home unknown to us.', 6),
+    ('Big Bang', 'I began it all with an explosion of everything.', 6),
+    ('Andromeda', 'I’m your neighbor in the vast galactic sea.', 6),
+    ('Milky Way', 'I’m the galaxy you call home.', 6),
+    ('Orbit', 'I’m a path curved by gravity’s pull.', 6),
+    ('Eclipse', 'I hide one celestial body behind another.', 6),
+    ('Dark Matter', 'I’m unseen, but I hold galaxies together.', 6),
+    ('Cosmos', 'I’m everything, from the smallest particle to the largest galaxy.', 6),
+    ('Gravity', 'I’m the force that keeps everything grounded.', 6),
+    ('Red Giant', 'I’m a dying star that swells with heat and light.', 6),
+    ('White Dwarf', 'I’m a faint star left behind after the light fades.', 6),
+    ('Solar Flare', 'I’m a burst of energy from the sun’s surface.', 6),
+    ('Hubble', 'I’m a telescope watching the universe unfold.', 6),
+    ('Asteroid Belt', 'I’m a ring of rocks between Mars and Jupiter.', 6),
+    ('Event Horizon', 'I’m the edge where escape becomes impossible.', 6),
+    ('Oort Cloud', 'I’m a shell of icy bodies at the edge of the solar system.', 6),
+    ('Space-time', 'I’m the fabric woven by gravity and motion.', 6),
+    ('Telescope', 'I let you see what’s far beyond human reach.', 6),
+    ('Satellite', 'I orbit planets, sending signals back to Earth.', 6),
+    ('Cosmic Rays', 'I’m high-energy particles traveling across the universe.', 6),
+    ('Dark Energy', 'I’m the unknown force speeding up the universe’s expansion.', 6),
+    ('Singularity', 'I’m a point of infinite density, defying comprehension.', 6),
+    ('Photon', 'I carry light across the cosmos.', 6),
+    ('Magnetar', 'I’m a star with an intense magnetic field.', 6),
+    ('Kuiper Belt', 'I’m home to icy bodies beyond Neptune.', 6),
+    ('Gamma Ray', 'I’m the most energetic form of light.', 6),
+    ('Alpha Centauri', 'I’m the closest stellar system to your own.', 6),
+    ('Voyager', 'I’m a spacecraft that carries humanity’s message to the stars.', 6),
+    ('Horizon', 'I’m where the sky meets the unknown.', 6),
+    ('Supercluster', 'I’m a grouping of galaxies bound by gravity.', 6),
+    ('Rings of Saturn', 'I’m a beautiful halo of icy particles.', 6),
+    ('Multiverse', 'I’m the theory of many worlds beyond your own.', 6);
