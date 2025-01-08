@@ -8,6 +8,5 @@ var app = builder.Build();
 app.UseDefaultFiles(); // Serving index.html as the default file
 app.UseStaticFiles(); // Serves other static files like CSS, JS, images, etc.
 
-//app.MapGet("/", () => "Hello World!");
 
 app.Run();
