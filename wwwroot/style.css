@@ -95,7 +95,7 @@ ul {
 
 .player1Container {
     grid-area: player1Container;
-   /*height: 50vh;*/
+    height: 50vh;
     border: 6px dashed var(--player-blue-700);
     background-color: var(--purple-800);
     margin-bottom: 10px;
@@ -133,7 +133,7 @@ ul {
 .player2Container {
     grid-area: player2Container;
     
-    /*height: 50vh;*/
+    height: 50vh;
     border: 6px dashed var(--player-pink-700);
     background-color: var(--purple-800);
     margin-bottom: 10px;
