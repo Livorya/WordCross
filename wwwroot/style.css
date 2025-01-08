@@ -83,18 +83,19 @@ ul {
 .gameplayScreen {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.35fr 0.3fr;
     grid-template-areas: 
     "player1Container gameboardContainer player2Container"
     "player1Container gameboardContainer player2Container"
-    "player1Scorefield timer player2Scorefield";
+    "player1Scorefield timer player2Scorefield"
+    " hint hint hint";
 
     margin-top: 40px;
 }
 
 .player1Container {
     grid-area: player1Container;
-    height: 50vh;
+   /*height: 50vh;*/
     border: 6px dashed var(--player-blue-700);
     background-color: var(--purple-800);
     margin-bottom: 10px;
@@ -110,11 +111,12 @@ ul {
     flex-direction: column;
     text-align: left;
     padding: 0px 10px;
+    margin-top: 15px;
 }
 
 .gameboardContainer {
     grid-area: gameboardContainer;
-    
+
     border: 6px dashed var(--green-700);
     background-color: var(--purple-800);
     margin: 0px 15px;
@@ -132,7 +134,7 @@ ul {
 .player2Container {
     grid-area: player2Container;
     
-    height: 50vh;
+    /*height: 50vh;*/
     border: 6px dashed var(--player-pink-700);
     background-color: var(--purple-800);
     margin-bottom: 10px;
@@ -147,6 +149,7 @@ ul {
         flex-direction: column;
         text-align: left;
         padding: 0px 10px;
+        margin-top: 15px;
 }
 
 .playerInput {
@@ -210,7 +213,12 @@ ul {
     #timer {
         font-size: 2rem;
 }
-
+.hint {
+    grid-area: hint;
+    background-color: var(--purple-800);
+    margin: -2% 25% 2% 25%;
+    border: 4px dashed var(--fuchsia-800)
+}
 
 
 
@@ -488,3 +496,5 @@ ul {
         min-height: 600px;
     }
 } 
+}
+
