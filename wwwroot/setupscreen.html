@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Word! Associaiton Setup</title>
+</head>
+<body class="setupScreenBody">
+    
+    <section class="setupScreen">
+        <!-- Left Panel -->
+        <section class="setupPanel">
+            <!-- Game Title -->
+            <section class="header">
+                <h1 class="wordTitle">WORD!</h1>
+                <h1 class="associationTitle">ASSOCIATION</h1>
+            </section>
+    
+            <!-- Player Selection -->
+            <section class="playerSelection">
+                <button id="1playerBtn" class="playerBtn">1 Player</button>
+                <button id="2playerBtn" class="playerBtn">2 Players</button>
+            </section>
+    
+            <!-- Game Conditions -->
+            <section class="conditionBox">
+                <h2>Set your conditions</h2>
+                <div class="conditionOptions">
+                    <div class="inputWrapper">
+                        <input type="number" class="conditionInput" id="roundInput" value="10" min="1" max="99">
+                        <label>#Rounds</label>
+                    </div>
+                    <span class="orSpan">or</span>
+                    <div class="inputWrapper">
+                        <input type="number" class="conditionInput" id="pointGoalInput" value="50" min="1" max="99">
+                        <label>Point Goal</label>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Start Button -->
+            <button id="startBtn">Start!</button>
+        </section>
+    
+        <!-- Right Panel - Category Grid -->
+        <section class="categoryGrid">
+            <button class="categoryBtn universe">Universe</button>
+            <button class="categoryBtn programming">Programming</button>
+            <button class="categoryBtn music">Music</button>
+            <button class="categoryBtn sport">Sport</button>
+            <button class="categoryBtn animals">Animals</button>
+            <button class="categoryBtn movies">Movies</button>
+        </section>
+    </section>
+
+</body>
+</html>

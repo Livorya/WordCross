@@ -8,6 +8,7 @@ function changeColor(e){
 
 /*
 * #Id index: *
+Gameplay Screen:
 subjectTitle - <h1> fetches current subject title from databate and displays it at the top of the gameboard
 
 player1IncorrectWords - <ul> that contains player1 incorrect guesses
@@ -19,4 +20,8 @@ player2Score - <span> that contains player2 score
 player2Input - <input> field for player2 guesses -> incorrect words will get added to (#player2IncorrectWords)
 
 timer - <span> that displays time left
+
+Setup Screen:
+
+
 */
