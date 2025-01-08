@@ -120,14 +120,18 @@ ul {
     background-color: var(--purple-800);
     margin: 0px 15px;
     padding: 5px;
+    padding-top: 40px; 
     box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
 
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    grid-column-gap: 3px;
-    grid-row-gap: 3px;
+    grid-template-rows: repeat(6, 1fr);
+    grid-row-gap: 1px;
     
+}
+
+.gameboardContainer div {
+    letter-spacing: 40px;
+    padding-left: 7%;
 }
 
 .player2Container {
