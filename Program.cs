@@ -1,4 +1,4 @@
-    using WordCross;
+using WordCross;
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
