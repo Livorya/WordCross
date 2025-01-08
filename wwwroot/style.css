@@ -36,7 +36,7 @@ body {
     align-items: center;
     flex-direction: column;
 }
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     margin: 0;
 }
 ul {
@@ -215,9 +215,11 @@ ul {
 .hint {
     grid-area: hint;
     background-color: var(--purple-800);
-    margin: -2% 25% 2% 25%;
+    margin: 0% 25% 2% 25%;
+    padding: 10px 5px;
     border: 4px dashed var(--fuchsia-800)
 }
+
 
 
 
@@ -302,6 +304,7 @@ ul {
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
+    margin-top: -30px;
 }
 
 .conditionOptions {
@@ -405,10 +408,10 @@ ul {
     font-family: 'Fredoka', cursive;
 }
 
-.sea-life {
+.universe {
     background-color: var(--player-blue-700);
 }
-.sea-life:hover {
+.universe:hover {
     background-color: var(--player-blue-800);
 }
 
@@ -433,17 +436,17 @@ ul {
     background-color: var(--orange-800);
 }
 
-.nature {
+.animals {
     background-color: var(--green-700);
 }
-.nature:hover {
+.animals:hover {
     background-color: var(--green-800);
 }
 
-.animals {
+.movies {
     background-color: var(--yellow-700);
 }
-.animals:hover {
+.movies:hover {
     background-color: var(--yellow-800);
 }
 
@@ -451,7 +454,7 @@ ul {
 .categoryBtn:active {
 }
 
-.sea-life:active {
+.universe:active {
     background-color: var(--player-blue-700);
 }
 
@@ -467,11 +470,11 @@ ul {
     background-color: var(--orange-700);
 }
 
-.nature:active {
+.animals:active {
     background-color: var(--green-700);
 }
 
-.animals:active {
+.movies:active {
     background-color: var(--yellow-700);
 }
 
