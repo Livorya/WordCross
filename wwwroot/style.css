@@ -17,10 +17,10 @@
     --player-blue-800: #0284c7;
     --player-blue-700: #0ea5e9;
 
-    --orange-800: #ea580c;
+    --orange-800: #e0580f;
     --orange-700: #f97316;
 
-    --yellow-800: #eab308;
+    --yellow-800: #e0aa09;
     --yellow-700: #facc15;
 }
 
@@ -210,3 +210,281 @@ ul {
     #timer {
         font-size: 2rem;
 }
+
+
+
+
+/* Setup Screen */
+.setupScreenBody {
+    background-color: var(--purple-800);
+}
+
+.setupScreen {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-remplate-rows: 1fr;
+    grid-template-areas: 
+    "setupPanel categoryGrid";
+
+    max-height: 50vh;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.setupPanel {
+    grid-area: setupPanel;
+    background-color: var(--purple-700);
+    padding: 1rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+    .playerSelection {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+    }
+        .playerBtn {
+            width: 50%;
+            background-color: var(--fuchsia-600);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease-out;
+            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
+            font-family: 'Fredoka', cursive;
+            white-space: nowrap; /* prevent text from wrapping */
+            margin-top: -20px;
+        }
+
+            .playerBtn:hover {
+                background-color: var(--fuchsia-800);
+                transform: translateY(-4px);
+                box-shadow: 0 8px 0 rgba(0, 0, 0, 0.4);
+            }
+
+                .playerBtn:active {
+                    transform: translateY(0);
+                    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
+                    background-color: var(--fuchsia-700);
+                }
+
+.conditionBox {
+    border: 6px dashed var(--fuchsia-800);
+    padding: 1.5rem;
+    background-color: var(--purple-800);
+    box-shadow: 0px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+    .conditionBox h2 {
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-family: 'Fredoka', cursive;
+    }
+
+.orSpan {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.conditionOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+    .inputWrapper label {
+        color: white;
+        font-family: 'Fredoka', cursive;
+        font-size: 1.125rem;
+    }
+
+.conditionInput {
+    background-color: var(--player-pink-700);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out;
+    font-family: 'Fredoka', cursive;
+    width: 5rem;
+    text-align: center;
+}
+
+    .conditionInput:hover {
+        background-color: var(--player-pink-800);
+    }
+
+/* Remove input arrows */
+    .conditionInput::-webkit-outer-spin-button,
+    .conditionInput::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+        /* Remove focus outline and add custom focus style */
+        .conditionInput:focus {
+            outline: none;
+            background-color: var(--player-pink-800);
+        }
+
+            .conditionInput:active {
+                background-color: var(--player-pink-800);
+            }
+
+#startBtn {
+    background-color: var(--green-700);
+    color: white;
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
+    font-family: 'Fredoka', cursive;
+}
+
+    #startBtn:hover {
+        background-color: var(--green-800);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 0 rgba(0, 0, 0, 0.4);
+    }
+
+        #startBtn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
+            background-color: var(--green-700);
+        }
+
+
+
+.categoryGrid {
+    grid-area: categoryGrid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.categoryBtn {
+    border: none;
+    color: white;
+    font-size: 2.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 2rem;
+    font-family: 'Fredoka', cursive;
+}
+
+.sea-life {
+    background-color: var(--player-blue-700);
+}
+.sea-life:hover {
+    background-color: var(--player-blue-800);
+}
+
+.programming {
+    background-color: var(--player-pink-700);
+}
+.programming:hover {
+    background-color: var(--player-pink-800);
+}
+
+.music {
+    background-color: var(--fuchsia-700);
+}
+.music:hover {
+    background-color: var(--fuchsia-800);
+}
+
+.sport {
+    background-color: var(--orange-700);
+}
+.sport:hover {
+    background-color: var(--orange-800);
+}
+
+.nature {
+    background-color: var(--green-700);
+}
+.nature:hover {
+    background-color: var(--green-800);
+}
+
+.animals {
+    background-color: var(--yellow-700);
+}
+.animals:hover {
+    background-color: var(--yellow-800);
+}
+
+/* Active states for category buttons */
+.categoryBtn:active {
+}
+
+.sea-life:active {
+    background-color: var(--player-blue-700);
+}
+
+.programming:active {
+    background-color: var(--player-pink-700);
+}
+
+.music:active {
+    background-color: var(--fuchsia-600);
+}
+
+.sport:active {
+    background-color: var(--orange-700);
+}
+
+.nature:active {
+    background-color: var(--green-700);
+}
+
+.animals:active {
+    background-color: var(--yellow-700);
+}
+
+
+
+@media (max-width: 1024px) {
+
+    .setupScreen {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+            "setup"
+            "categories";
+    }
+    .setupPanel {
+        padding: 1.5rem;
+    }
+    .categoryGrid {
+        min-height: 600px;
+    }
+} 
