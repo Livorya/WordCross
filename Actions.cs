@@ -11,11 +11,9 @@ public class Actions
         _db = _database.Connection();
         
         // Map incoming TestWord GET route from client to method
-        // http://localhost:5185/test-word/Smurfa
-        app.MapGet("/test-word/{word}", TestWord);
+        app.MapGet("/subject-check/{subject}", GetWord);
         
         // Map incoming NewWord POST route from client to method
-        // http://localhost:5185/new-word
         app.MapPost("/new-word", async (HttpContext context) =>
         {
             // WordRequest here, is a class that defines the post requestBody format
@@ -30,7 +28,7 @@ public class Actions
     }
     
     // Read a word from the word table in the database
-    public async Task<string> GetWord(string subjectId)
+    async Task<string> GetWord(int subject)
     {
         var query = @"SELECT name
                       FROM word
@@ -39,7 +37,7 @@ public class Actions
 
         await using (var cmd = _db.CreateCommand(query))
         {
-            cmd.Parameters.AddWithValue(subjectId);
+            cmd.Parameters.AddWithValue(subject);
 
             await using (var reader = await cmd.ExecuteReaderAsync())
             {
@@ -50,7 +48,7 @@ public class Actions
             }
         }
 
-        return "";
+        return "ERROR";
     }
     
     // Process incoming TestWord from client
