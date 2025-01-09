@@ -12,9 +12,11 @@ async function getWord(e) {
     e.preventDefault(); // not reload page on form submit
     const subject = $('[name="subject"]').val();
     const response = await fetch('/subject-check/' + subject); // get (read)
-    console.log(response.json());
-    $('#message').text('Word: ' + response);
+    const word = await response.text(); // Use .text() if your server returns plain text
+    $('#message').text('Word: ' + word);
 }
+
+
 
 async function getAllWord(e) {
     e.preventDefault(); // not reload page on form submit
