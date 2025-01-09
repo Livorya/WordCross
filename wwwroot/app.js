@@ -1,19 +1,13 @@
 
-//$('body').on('click', changeColor);
 
-function changeColor(e){
-    e.preventDefault();
-    let background = $(this).css('background-color', 'black');
-}
-
-$('#subject-check').on('submit', getWord) // onsubmit for the testWord form
+$('#subject-check').on('submit', getWord()) // onsubmit for the testWord form
 
 async function getWord(e) {
     e.preventDefault(); // not reload page on form submit
     const subject = $('[name="subject"]').val();
     const response = await fetch('/subject-check/' + subject); // get (read)
-    console.log(response.json());
-    $('#message').text('Word: ' + response);
+    await console.log(response);
+    await $('#message').text('Word: ' + response);
 }
 
 async function getAllWord(e) {
