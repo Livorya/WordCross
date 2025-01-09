@@ -1,10 +1,3 @@
-/* Testing selector:
-    $subjectTitle.on('click', function(e) {
-        e.preventDefault();
-        $(this).css('background-color', 'black');
-    });
-*/
-
 /*
 * #Id index: *
 
@@ -65,4 +58,9 @@ const $sportBtn = $('#sportBtn');
 const $animalsBtn = $('#animalsBtn');
 const $moviesBtn = $('#moviesBtn');
 
-
+/* Testing selector:
+    $subjectTitle.on('click', function(e) {
+        e.preventDefault();
+        $(this).css('background-color', 'black');
+    });
+*/
