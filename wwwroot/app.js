@@ -6,6 +6,23 @@ function changeColor(e){
     let background = $(this).css('background-color', 'black');
 }
 
+$('#subject-check').on('submit', getWord) // onsubmit for the testWord form
+
+async function getWord(e) {
+    e.preventDefault(); // not reload page on form submit
+    const subject = $('[name="subject"]').val();
+    const response = await fetch('/subject-check/' + subject); // get (read)
+    console.log(response.json());
+    $('#message').text('Word: ' + response);
+}
+
+async function getAllWord(e) {
+    e.preventDefault(); // not reload page on form submit
+    const response = await fetch('/api/allWords/'); // get (read)
+    console.log(response);
+    $('#message').text('Change?');
+}
+
 /*
 * #Id index: *
 Gameplay Screen:

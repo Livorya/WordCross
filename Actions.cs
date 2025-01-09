@@ -12,19 +12,27 @@ public class Actions
         
         // Map incoming TestWord GET route from client to method
         app.MapGet("/subject-check/{subject}", GetWord);
-        
-        // Map incoming NewWord POST route from client to method
-        app.MapPost("/new-word", async (HttpContext context) =>
+        app.MapGet("/api/allWords/", GetAllWords);
+    }
+
+    async Task<List<string>> GetAllWords()
+    {
+        var query = @"SELECT name
+                      FROM word";
+
+        List<string> words = new();
+        await using (var cmd = _db.CreateCommand(query))
         {
-            // WordRequest here, is a class that defines the post requestBody format
-            var requestBody = await context.Request.ReadFromJsonAsync<string>();
-            if (requestBody is null)
+            await using (var reader = await cmd.ExecuteReaderAsync())
             {
-                return Results.BadRequest("Word is required.");
+                while (await reader.ReadAsync())
+                {
+                    words.Add(reader.GetString(0));
+                }
             }
-            bool success = await NewWord(requestBody, context.Request.Cookies["ClientId"]);
-            return success ? Results.Ok("Word added successfully.") : Results.StatusCode(500);
-        });
+        }
+
+        return words;
     }
     
     // Read a word from the word table in the database
@@ -43,30 +51,11 @@ public class Actions
             {
                 while (await reader.ReadAsync())
                 {
-                    return reader.GetString(1);
+                    return reader.GetString(0);
                 }
             }
         }
 
         return "ERROR";
-    }
-    
-    // Process incoming TestWord from client
-    async Task<bool> TestWord(string word)
-    {
-        await using var cmd = _db.CreateCommand("SELECT EXISTS (SELECT 1 FROM words WHERE word = $1)"); // fast if word exists in table query 
-        cmd.Parameters.AddWithValue(word);
-        bool result = (bool)(await cmd.ExecuteScalarAsync() ?? false); // Execute fast if word exists in table query 
-        return result;
-    }
-
-    // Process incoming NewWord  from client
-    async Task<bool> NewWord(string word, string clientId)
-    {
-        await using var cmd = _db.CreateCommand("INSERT INTO words (word, clientid) VALUES ($1, $2)");
-        cmd.Parameters.AddWithValue(word);
-        cmd.Parameters.AddWithValue(clientId);
-        int rowsAffected = await cmd.ExecuteNonQueryAsync(); // Returns the number of rows affected
-        return rowsAffected > 0; // Return true if the insert was successful
     }
 }
