@@ -24,6 +24,11 @@
     --yellow-700: #facc15;
 }
 
+/* The Modal (background) */
+.modal {
+    background-color: #0ea5e9;
+}
+
 body {
     background-color: var(--purple-700);
     font-family: 'Quicksand', Arial, Helvetica, sans-serif;
@@ -502,6 +507,6 @@ ul {
     .categoryGrid {
         min-height: 600px;
     }
-} 
+}
 
 
