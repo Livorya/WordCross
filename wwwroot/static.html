@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Statistics</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="endscreen.css">
 </head>
 
 <body>
@@ -17,10 +17,10 @@
             <div class="stats-box player1">
                 <div class="header">Player 1</div>
                 <ul class="stats-list">
-                    <li>AVG Round points: <span>5</span></li>
-                    <li>Round Score: <span>6</span></li>
-                    <li>Total Score: <span>25</span></li>
-                    <li>Total Games Won: <span>0</span></li>
+                    <li>AVG Round points: <span id="player1-avg-round">5</span></li>
+                    <li>Round Score: <span id="player1-round-score">6</span></li>
+                    <li>Total Score: <span id="player1-total-score">25</span></li>
+                    <li>Total Games Won: <span id="player1-games-won">0</span></li>
                 </ul>
             </div>
 
@@ -28,10 +28,10 @@
             <div class="stats-box player2">
                 <div class="header">Player 2</div>
                 <ul class="stats-list">
-                    <li>AVG Round points: <span>9</span></li>
-                    <li>Round Score: <span>10</span></li>
-                    <li>Total Score: <span>30</span></li>
-                    <li>Total Games Won: <span>1</span></li>
+                    <li>AVG Round points: <span id="player2-avg-round">9</span></li>
+                    <li>Round Score: <span id="player2-round-score">10</span></li>
+                    <li>Total Score: <span id="player2-total-score">30</span></li>
+                    <li>Total Games Won: <span id="player2-games-won">1</span></li>
                 </ul>
             </div>
         </div>
@@ -39,13 +39,13 @@
         <!-- Summary Box -->
         <div class="summary-box">
             <ul class="summary-list">
-                <li>AVG Round time: <span>0:24</span></li>
-                <li>Rounds cleared: <span>5</span></li>
-                <li>Winner: <span class="highlight">Player 2</span></li>
+                <li>AVG Round time: <span id="avg-round-time">0:24</span></li>
+                <li>Rounds cleared: <span id="rounds-cleared">5</span></li>
+                <li>Winner: <span id="winner">Player 2</span></li>
             </ul>
         </div>
 
-        <button class="new-game-btn">Setup New Game</button>
+        <button id="new-game-btn" class="new-game-btn">Setup New Game</button>
     </div>
 </body>
 
