@@ -1,6 +1,6 @@
+$('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord form
 
-
-$('#subject-check').on('submit', getWord()) // onsubmit for the testWord form
+/*
 // TODO: Refactor into getSubjectWords() fetching all words from input subject.
 async function getWord(e) {
     e.preventDefault(); // not reload page on form submit
@@ -10,6 +10,20 @@ async function getWord(e) {
     const word = await response.text(); // Use .text() if your server returns plain text
     $('#message').text('Word: ' + word);
 }
+*/
+// Reads all words from input subject and puts them into a list
+async function getSubjectWords(e) {
+    e.preventDefault(); // not reload page on form submit
+    const subject = $('[name="subject"]').val();
+    const response = await fetch('/subject-words/' + subject); // get (read)
+    
+    const word = await response.text(); // Use .text() if your server returns plain text
+    $('#message').text('Word: ' + word);
+}
+
+
+
+
 
 // FIXME: response is not handled correctly
 async function getAllWord(e) {
