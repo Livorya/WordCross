@@ -9,7 +9,7 @@ public class Actions
     public Actions(WebApplication app)
     {
         _db = _database.Connection();
-        
+
         // Map incoming TestWord GET route from client to method
         app.MapGet("/subject-check/{subject}", GetWord);
         app.MapGet("/api/allWords/", GetAllWords);
@@ -34,7 +34,7 @@ public class Actions
 
         return words;
     }
-    
+
     // Read a word from the word table in the database
     async Task<string> GetWord(int subject)
     {
