@@ -130,8 +130,8 @@ ul {
 }
 
 .gameboardContainer div {
-    letter-spacing: 40px;
-    padding-left: 7%;
+    padding-left: 40px; /* Centers text by adding 40px spacing on left side */
+    letter-spacing: 40px; /* adds 40px of spacing to the right of every letter */
 }
 
 .player2Container {
