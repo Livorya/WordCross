@@ -8,6 +8,7 @@ function changeColor(e){
 
 /*
 * #Id index: *
+
 Gameplay Screen:
 subjectTitle - <h1> fetches current subject title from databate and displays it at the top of the gameboard
 
@@ -21,7 +22,20 @@ player2Input - <input> field for player2 guesses -> incorrect words will get add
 
 timer - <span> that displays time left
 
-Setup Screen:
 
+Setup Screen:
+1playerBtn - Click for 1player mode
+2playerBtn - Click for 2player mode
+
+roundInput - input for #Rounds mode
+pointGoalInput - input for #PointGoal mode
+startBtn - button for starting the game
+
+universeBtn - category-button for Universe
+programmingBtn - category-button for Programming
+musicBtn - category-button for Music
+sportBtn - category-button for Sport
+animalsBtn - category-button for Animals
+moviesBtn - category-button for Movies
 
 */
