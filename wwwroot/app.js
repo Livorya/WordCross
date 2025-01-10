@@ -1,7 +1,11 @@
+// Button test area:
+$('#test-get-word').on('click', getWord); // Button for getWord
+$('#test-get-subject-words').on('click', getSubjectWords); // Button for getSubjectWords
+$('#test-get-random-words').on('click', getRandomWords); // Button for getRandomWords
+
 $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord form
 
-/*
-// TODO: Refactor into getSubjectWords() fetching all words from input subject.
+
 async function getWord(e) {
     e.preventDefault(); // not reload page on form submit
     const subject = $('[name="subject"]').val();
@@ -10,7 +14,7 @@ async function getWord(e) {
     const word = await response.text(); // Use .text() if your server returns plain text
     $('#message').text('Word: ' + word);
 }
-*/
+
 
 // Reads all words from input subject and puts them into a list
 async function getSubjectWords(e) {
@@ -19,8 +23,8 @@ async function getSubjectWords(e) {
     const response = await fetch('/subject-words/' + subject); // get (read)
     
     // Use .text() if your server returns plain text
-    const words = await response.json(); 
-    $('#message').text('Subject Words: ' + words.join(', '));
+    const words = await response.json(); //.json to convert C#list into JS array
+    $('#message').text('Subject Words: ' + words.join(', ')); //joins/concatenates the words array into the string
 }
 
 // Returns 6 random words from input subject in a list
@@ -28,7 +32,8 @@ async function getRandomWords(e) {
     e.preventDefault();
     const subject = $('[name="subject"]').val();
     const response = await fetch('/random-words/' + subject);
-    //.json() parses the responseBody as JSON -> converting it into a JavaScript array
+    
+    //.json converts C#list into JS array
     //.text() returns a plain text string (works well if that's what we want.. but not in this case)
     const words = await response.json(); 
     $('#message').text('Random Words: ' + words.join(', '));
@@ -44,6 +49,7 @@ async function getAllWord(e) {
     console.log(response);
     $('#message').text('Change?');
 }
+
 
 /*
 * #Id index: *
