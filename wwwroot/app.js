@@ -11,16 +11,28 @@ async function getWord(e) {
     $('#message').text('Word: ' + word);
 }
 */
+
 // Reads all words from input subject and puts them into a list
 async function getSubjectWords(e) {
     e.preventDefault(); // not reload page on form submit
     const subject = $('[name="subject"]').val();
     const response = await fetch('/subject-words/' + subject); // get (read)
     
-    const word = await response.text(); // Use .text() if your server returns plain text
-    $('#message').text('Word: ' + word);
+    // Use .text() if your server returns plain text
+    const words = await response.json(); 
+    $('#message').text('Subject Words: ' + words.join(', '));
 }
 
+// Returns 6 random words from input subject in a list
+async function getRandomWords(e) {
+    e.preventDefault();
+    const subject = $('[name="subject"]').val();
+    const response = await fetch('/random-words/' + subject);
+    //.json() parses the responseBody as JSON -> converting it into a JavaScript array
+    //.text() returns a plain text string (works well if that's what we want.. but not in this case)
+    const words = await response.json(); 
+    $('#message').text('Random Words: ' + words.join(', '));
+}
 
 
 
