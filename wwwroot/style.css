@@ -35,11 +35,9 @@
 #subject-modal-content {
     background-color: #fefefe;
     background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-    margin: 195px auto; /* 195px from the top and centered */
-    padding: 20px;
+    margin: 260px auto; /* 195px from the top and centered */
     border: 3px solid #888;
     width: 500px; /* Could be more or less, depending on screen size */
-    height: 287px;
 }
 
 /* The Close Button */
@@ -83,6 +81,7 @@ ul {
     border: 6px dashed var(--fuchsia-800);
     padding: 5px 50px;
     margin-bottom: 20px;
+    margin-top: 50px;
     box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
@@ -275,6 +274,7 @@ ul {
     max-height: 50vh;
     max-width: 1080px;
     margin: 0 auto;
+    margin-top: 50px;
     padding: 2rem;
 }
 .setupPanel {
@@ -442,6 +442,17 @@ ul {
     cursor: pointer;
     transition: background-color 0.3s;
     padding: 2rem;
+    font-family: 'Fredoka', cursive;
+}
+
+.modal .categoryBtn {
+    border: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 3.5rem 2rem;
     font-family: 'Fredoka', cursive;
 }
 
