@@ -29,13 +29,13 @@
     display: block; /* Hidden by default */
     position: absolute; /* Stay in place */
     z-index: 2; /* Sit on top */
-    top: 0;
+    top: 260px;
 }
 
 #subject-modal-content {
     background-color: #fefefe;
     background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-    margin: 260px auto; /* 195px from the top and centered */
+    margin: 0 auto;
     border: 3px solid #888;
     width: 500px; /* Could be more or less, depending on screen size */
 }
