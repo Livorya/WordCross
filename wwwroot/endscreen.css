@@ -1,9 +1,37 @@
 /* Game static and setup game style and Round Static */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&family=Lilita+One&display=swap');
+
+:root {
+    --purple-800: #471980;
+    --purple-700: #6b21a8;
+
+    --fuchsia-800: #c026d3;
+    --fuchsia-700: #d946ef;
+    --fuchsia-600: #e879f9;
+
+    --player-pink-800: #be185d;
+    --player-pink-700: #ec4899;
+    ;
+
+    --green-800: #16a34a;
+    --green-700: #22c55e;
+
+    --player-blue-800: #0284c7;
+    --player-blue-700: #0ea5e9;
+
+    --orange-800: #ea580c;
+    --orange-700: #f97316;
+
+    --yellow-800: #eab308;
+    --yellow-700: #facc15;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #452b7d;
+    background-color: #431e48;
     color: white;
     display: flex;
     justify-content: center;
@@ -12,6 +40,7 @@ body {
 }
 
 .container {
+    background-color: #6b21a8;
     text-align: center;
     padding: 5em;
     height: 70vh;
@@ -21,12 +50,12 @@ body {
 }
 
 .title {
-    background-color: #FF917C;
+    font-family: 'Fredoka', cursive;
+    background-color: #ea580c;
     color: #FFFFFF;
     padding: 10px 40px;
     border-radius: 20px;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 2.3rem;
     display: block;
 }
 
@@ -39,7 +68,7 @@ body {
 }
 
 .stats-box {
-    background-color: #2E1664;
+    background-color: #471980;
     padding: 20px;
     border-radius: 10px;
     position: relative;
@@ -51,15 +80,15 @@ body {
 }
 
 .stats-box.player1 {
-    border: 3px dashed #4ED4F4;
+    border: 6px dashed #0284c7;
 }
 
 .stats-box.player2 {
-    border: 3px dashed #FF91AF;
+    border: 6px dashed #be185d;
 }
 
 .stats-box .header {
-    background-color: #4ED4F4;
+    background-color: #0ea5e9;
     color: #FFFFFF;
     padding: 5px 10px;
     font-size: 18px;
@@ -72,7 +101,7 @@ body {
 }
 
 .stats-box.player2 .header {
-    background-color: #FF91AF;
+    background-color: #ec4899;
 }
 
 .stats-list {
@@ -98,10 +127,10 @@ body {
 }
 
 .summary-box {
-    background-color: #2E1664;
+    background-color: #471980;
     padding: 20px;
     border-radius: 10px;
-    border: 3px dashed #89F27F;
+    border: 6px dashed #22c55e;
     margin: 20px auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     width: 280px;
@@ -129,8 +158,8 @@ body {
 }
 
 .new-game-btn {
-    background-color: #A6FF89;
-    color: #3F2488;
+    background-color: #22c55e;
+    color: white;
     padding: 15px 30px;
     font-size: 20px;
     font-weight: bold;
@@ -143,7 +172,8 @@ body {
 }
 
 .new-game-btn:hover {
-    background-color: #89F27F;
+    background-color: #16a34a;
+    transition: 0.3s ease;
 }
 
 /* Responsive Design */
@@ -225,4 +255,4 @@ body {
         font-size: 16px;
         padding: 8px 16px;
     }
-}  
+}
