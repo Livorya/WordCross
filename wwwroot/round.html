@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Round Statistics</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="endscreen.css">
 </head>
 
 <body>
@@ -17,9 +17,9 @@
             <div class="stats-box player1">
                 <div class="header">Player 1</div>
                 <ul class="stats-list">
-                    <li>AVG Round points: <span>3,6</span></li>
-                    <li>Round Score: <span>3</span></li>
-                    <li>Total Score: <span>15</span></li>
+                    <li>AVG Round points: <span id="player1-avg-round">3,6</span></li>
+                    <li>Round Score: <span id="player1-round-score">3</span></li>
+                    <li>Total Score: <span id="player1-total-score">15</span></li>
                 </ul>
             </div>
 
@@ -27,9 +27,9 @@
             <div class="stats-box player2">
                 <div class="header">Player 2</div>
                 <ul class="stats-list">
-                    <li>AVG Round points: <span>8</span></li>
-                    <li>Round Score: <span>3</span></li>
-                    <li>Total Score: <span>17</span></li>
+                    <li>AVG Round points: <span id="player2-avg-round">8</span></li>
+                    <li>Round Score: <span id="player2-round-score">3</span></li>
+                    <li>Total Score: <span id="player2-total-score">17</span></li>
                 </ul>
             </div>
         </div>
@@ -37,14 +37,14 @@
         <!-- Summary Box -->
         <div class="summary-box">
             <ul class="summary-list">
-                <li>AVG Round time: <span>0:27</span></li>
-                <li>Rounds cleared: <span>3</span></li>
-                <li>#Rounds Left: <span>2</span></li>
-                <li>Points Goal: <span class="highlight">---</span></li>
+                <li>AVG Round time: <span id="avg-round-time">0:27</span></li>
+                <li>Rounds cleared: <span id="rounds-cleared">3</span></li>
+                <li>#Rounds Left: <span id="rounds-left">2</span></li>
+                <li>Points Goal: <span id="points-goal" class="highlight">---</span></li>
             </ul>
         </div>
 
-        <button class="new-game-btn">Continue</button>
+        <button id="continue-btn" class="new-game-btn">Continue</button>
     </div>
 </body>
 
