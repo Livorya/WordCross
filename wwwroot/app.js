@@ -12,7 +12,7 @@ async function getWord(e) {
     const response = await fetch('/subject-check/' + subject); // get (read)
     
     const word = await response.text(); // Use .text() if your server returns plain text
-    $('#message').text('Word: ' + word);
+    $('#message').text('Single Word from subject:\n ' + word);
 }
 
 
@@ -24,7 +24,7 @@ async function getSubjectWords(e) {
     
     // Use .text() if your server returns plain text
     const words = await response.json(); //.json to convert C#list into JS array
-    $('#message').text('Subject Words: ' + words.join(', ')); //joins/concatenates the words array into the string
+    $('#message').text('All Subject Words:\n ' + words.join(', ')); //joins/concatenates the words array into the string
 }
 
 // Returns 6 random words from input subject in a list
@@ -36,7 +36,7 @@ async function getRandomWords(e) {
     //.json converts C#list into JS array
     //.text() returns a plain text string (works well if that's what we want.. but not in this case)
     const words = await response.json(); 
-    $('#message').text('Random Words: ' + words.join(', '));
+    $('#message').text('Random Words:\n ' + words.join(', ')); //.text() used here creates a single line of text as output.
 }
 
 
