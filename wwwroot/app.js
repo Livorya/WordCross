@@ -36,12 +36,12 @@ async function getRandomWords(e) {
     const words = await response.json(); 
 
     // Place each word [index] into #row1 -> #row6 .toUpperCase()
-    $('#row1').text((words[0] || '').toUpperCase());
-    $('#row2').text((words[1] || '').toUpperCase());
-    $('#row3').text((words[2] || '').toUpperCase());
-    $('#row4').text((words[3] || '').toUpperCase());
-    $('#row5').text((words[4] || '').toUpperCase());
-    $('#row6').text((words[5] || '').toUpperCase());
+    $('#row1').text((words[0]).toUpperCase());
+    $('#row2').text((words[1]).toUpperCase());
+    $('#row3').text((words[2]).toUpperCase());
+    $('#row4').text((words[3]).toUpperCase());
+    $('#row5').text((words[4]).toUpperCase());
+    $('#row6').text((words[5]).toUpperCase());
 }
 
 
