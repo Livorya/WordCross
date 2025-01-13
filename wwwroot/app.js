@@ -27,7 +27,9 @@ async function getSubjectWords(e) {
     $('#message').text('All Subject Words:\n ' + words.join(', ')); //joins/concatenates the words array into the string
 }
 
-// Returns 6 random words from input subject in a list
+ //TODO: Refactor gerRandomWords to change html.text() into .text(words[i])
+// Returns 6 random words from input subject in a list, 
+// then changes html.text() into .text(words[i])
 async function getRandomWords(e) {
     e.preventDefault();
     const subject = $('[name="subject"]').val();
@@ -35,8 +37,7 @@ async function getRandomWords(e) {
     //.json converts C#-list into a JS-array
     const words = await response.json(); 
 
-    //TODO: Refactor gerRandomWords to change html.text() into .text(words[i])
-    // Place each word [index] into #row1 -> #row6 .toUpperCase()
+    // Place each word [index] into #row1 -> #row6 .toUpperCase(!)
     $('#row1').text((words[0]).toUpperCase()); //.text()-content of #row = words[i].toUpperCase
     $('#row2').text((words[1]).toUpperCase());
     $('#row3').text((words[2]).toUpperCase());
