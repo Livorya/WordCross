@@ -27,7 +27,7 @@ async function getSubjectWords(e) {
     $('#message').text('All Subject Words:\n ' + words.join(', ')); //joins/concatenates the words array into the string
 }
 
- //TODO: Refactor gerRandomWords to change html.text() into .text(words[i])
+ //TODO: Refactor gerRandomWords .split('_')
 // Returns 6 random words from input subject in a list, 
 // then changes html.text() into .text(words[i])
 async function getRandomWords(e) {
@@ -38,12 +38,12 @@ async function getRandomWords(e) {
     const words = await response.json(); 
 
     // Place each word [index] into #row1 -> #row6 .toUpperCase(!)
-    $('#row1').text((words[0]).toUpperCase()); //.text()-content of #row = words[i].toUpperCase
-    $('#row2').text((words[1]).toUpperCase());
-    $('#row3').text((words[2]).toUpperCase());
-    $('#row4').text((words[3]).toUpperCase());
-    $('#row5').text((words[4]).toUpperCase());
-    $('#row6').text((words[5]).toUpperCase());
+    $('#row0').text((words[0]).toUpperCase()); //.text()-content of #row = words[i].toUpperCase
+    $('#row1').text((words[1]).toUpperCase());
+    $('#row2').text((words[2]).toUpperCase());
+    $('#row3').text((words[3]).toUpperCase());
+    $('#row4').text((words[4]).toUpperCase());
+    $('#row5').text((words[5]).toUpperCase());
 }
 
 

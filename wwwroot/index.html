@@ -1,122 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Word!Association</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Header/Title -->
     <section class="header">
-        <h1 class="wordTitle">Word!</h1>
-        <h1 class="associationTitle">Association</h1>
+      <h1 class="wordTitle">Word!</h1>
+      <h1 class="associationTitle">Association</h1>
     </section>
 
-        <!-- Display current subject category -->
+    <!-- Display current subject category -->
     <h1 id="subjectTitle">Animals</h1>
 
     <!-- GameplayScreen wrapper -->
     <section class="gameplayScreen">
-
-        <!-- Player 1 container -->
-        <section class="player1Container">
-            <h4>Incorrect</h4>
-            <!-- Display for Player 1 incorrect words -->
+      <!-- Player 1 container -->
+      <section class="player1Container">
+        <h4>Incorrect</h4>
+        <!-- Display for Player 1 incorrect words -->
         <div class="playerWordField"></div>
-            <!--words from player1Input gets added to <ul>-->    
-            <ul id="player1IncorrectWords">
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-                <li>Ord</li>
-            </ul>    
-        </section>
-        <!-- Player 1 score and input-field -->
-        <section class="player1ScoreField">
-            <div>
-                <h3>Score: <span id="player1Score">12 pts</span></h3>
-            </div>
-            <input id="player1Input" class="playerInput" type="text" placeholder="Keep on guessing..">
-        </section>
+        <!--words from player1Input gets added to <ul>-->
+        <ul id="player1IncorrectWords">
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+        </ul>
+      </section>
+      <!-- Player 1 score and input-field -->
+      <section class="player1ScoreField">
+        <div>
+          <h3>Score: <span id="player1Score">12 pts</span></h3>
+        </div>
+        <input
+          id="player1Input"
+          class="playerInput"
+          type="text"
+          placeholder="Keep on guessing.."
+        />
+      </section>
 
-        <!-- Container for crossword gameplay area -->
-        <section class="gameboardContainer">
-            <div id="row1">_____</div>
-            <div id="row2">_______</div>
-            <div id="row3">_______</div>
-            <div id="row4">_____</div>
-            <div id="row5">_______</div> 
-            <div id="row6">_________</div>
-        </section>
+      <!-- Container for crossword gameplay area -->
+      <section class="gameboardContainer">
+        <div id="row0">_____</div>
+        <div id="row1">_______</div>
+        <div id="row2">_______</div>
+        <div id="row3">_____</div>
+        <div id="row4">_______</div>
+        <div id="row5">_________</div>
+      </section>
 
-        <!-- Player 2 container --> 
-        <section class="player2Container">
-            <h4>Incorrect</h4>
-            <!-- Display for Player 2 incorrect words -->
-            <div class="playerWordField"></div>
-                <!--words from player2Input gets added to <ul>-->  
-                <ul id="player2IncorrectWords">
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                    <li>Ord</li>
-                </ul>
-        </section>
-        <!-- Player 2 score and input-field -->
-        <section class="player2ScoreField">
-            <div>
-                <h3>Score: <span id="player2Score">10 pts</span></h3>
-            </div>
-            <input id="player2Input" class="playerInput" type="text" placeholder="Keep on guessing..">
-        </section>
+      <!-- Player 2 container -->
+      <section class="player2Container">
+        <h4>Incorrect</h4>
+        <!-- Display for Player 2 incorrect words -->
+        <div class="playerWordField"></div>
+        <!--words from player2Input gets added to <ul>-->
+        <ul id="player2IncorrectWords">
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+          <li>Ord</li>
+        </ul>
+      </section>
+      <!-- Player 2 score and input-field -->
+      <section class="player2ScoreField">
+        <div>
+          <h3>Score: <span id="player2Score">10 pts</span></h3>
+        </div>
+        <input
+          id="player2Input"
+          class="playerInput"
+          type="text"
+          placeholder="Keep on guessing.."
+        />
+      </section>
 
-    <section class="timer"><span id="timer">00:27</span></section>
-    
-    <section class="hint">
+      <section class="timer"><span id="timer">00:27</span></section>
+
+      <section class="hint">
         <h5 id="hint">'Flightless and dressed for formal occasions.'</h5>
+      </section>
     </section>
 
-</section>
-
-<footer>
-    <p>Testing</p>
-    <form id="subject-check">
+    <footer>
+      <p>Testing</p>
+      <form id="subject-check">
         <label>Test database</label>
-        <input type="number" name="subject" placeholder="1-6">
+        <input type="number" name="subject" placeholder="1-6" />
         <button id="test-get-word">Test Get Word</button>
         <button id="test-get-subject-words">Test Get Subject Words</button>
         <button id="test-get-random-words">Test Get Random Words</button>
-    </form>
-    <p id="message"></p>
-</footer>
-
-
-</body>
+      </form>
+      <p id="message"></p>
+    </footer>
+  </body>
 </html>
