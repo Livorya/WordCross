@@ -51,6 +51,35 @@ async function getAllWord(e) {
 }
 
 
+ // Round timer
+
+let seconds = 0;
+let minutes = 0;
+
+function updateTimer() {
+    seconds++;
+    if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+    }
+    if (minutes === 60) {
+        minutes = 0;
+    }
+
+    // Format time values
+    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
+    // Display the time
+    document.getElementById('timer').innerText = `${formattedMinutes}:${formattedSeconds}`;
+}
+
+// Start the timer when the page loads
+window.onload = function () {
+    setInterval(updateTimer, 1000);
+};
+
+
 /*
 * #Id index: *
 
