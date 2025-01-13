@@ -32,10 +32,10 @@ async function getRandomWords(e) {
     e.preventDefault();
     const subject = $('[name="subject"]').val();
     const response = await fetch('/random-words/' + subject);
-    
+    //.json converts C#-list into a JS-array
     const words = await response.json(); 
 
-    // Place each word into #row1 -> #row6 .toUpperCase()
+    // Place each word [index] into #row1 -> #row6 .toUpperCase()
     $('#row1').text((words[0] || '').toUpperCase());
     $('#row2').text((words[1] || '').toUpperCase());
     $('#row3').text((words[2] || '').toUpperCase());
