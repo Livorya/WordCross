@@ -276,17 +276,25 @@ ul {
             margin-top: -20px;
         }
 
-            .playerBtn:hover {
+            #player1Btn:hover {
                 background-color: var(--fuchsia-800);
                 transform: translateY(-4px);
                 box-shadow: 0 8px 0 rgba(0, 0, 0, 0.4);
             }
 
-                .playerBtn:active {
+                #player1Btn:active {
                     transform: translateY(0);
                     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
                     background-color: var(--fuchsia-700);
                 }
+
+                    #player2Btn {
+                        cursor:not-allowed;
+                    }
+                    #player2Btn:active {
+                        pointer-events: none;
+                    }
+                    
 
 .conditionBox {
     border: 6px dashed var(--fuchsia-800);
@@ -346,8 +354,12 @@ ul {
     text-align: center;
 }
 
-    .conditionInput:hover {
+    #roundInput:hover {
         background-color: var(--player-pink-800);
+    }
+    #pointGoalInput {
+        cursor: not-allowed;
+        pointer-events: none;
     }
 
 /* Remove input arrows */

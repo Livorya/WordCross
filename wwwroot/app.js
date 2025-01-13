@@ -33,10 +33,15 @@ async function getRandomWords(e) {
     const subject = $('[name="subject"]').val();
     const response = await fetch('/random-words/' + subject);
     
-    //.json converts C#list into JS array
-    //.text() returns a plain text string (works well if that's what we want.. but not in this case)
     const words = await response.json(); 
-    $('#message').text('Random Words:\n ' + words.join(', ')); //.text() used here creates a single line of text as output.
+
+    // Place each word into #row1 -> #row6 .toUpperCase()
+    $('#row1').text((words[0] || '').toUpperCase());
+    $('#row2').text((words[1] || '').toUpperCase());
+    $('#row3').text((words[2] || '').toUpperCase());
+    $('#row4').text((words[3] || '').toUpperCase());
+    $('#row5').text((words[4] || '').toUpperCase());
+    $('#row6').text((words[5] || '').toUpperCase());
 }
 
 
