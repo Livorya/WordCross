@@ -10,6 +10,7 @@ $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord f
 
 // Upper Scope variables:
 let words = []; // Store 6 random words in this array
+let revealedWords = []; // Store revealed words for checking/point-handling
 let currentScore = 0; // Store currentScore
 
 async function getWord(e) {
@@ -33,25 +34,7 @@ async function getSubjectWords(e) {
     $('#message').text('All Subject Words:\n ' + words.join(', ')); //joins/concatenates the words array into the string
 }
 
-/*
-//TODO: Refactor gerRandomWords to change html.text() into .text(words[i])
-// Returns 6 random words from input subject in a list
-async function getRandomWords(e) {
-    e.preventDefault();
-    const subject = $('[name="subject"]').val();
-    const response = await fetch('/random-words/' + subject);
-    //.json converts C#-list into a JS-array
-    const words = await response.json(); 
 
-    // Place each word [index] into #row1 -> #row6 .toUpperCase()
-    $('#row1').text((words[0]).toUpperCase()); //.text()-content of #row = words[i].toUpperCase
-    $('#row2').text((words[1]).toUpperCase());
-    $('#row3').text((words[2]).toUpperCase());
-    $('#row4').text((words[3]).toUpperCase());
-    $('#row5').text((words[4]).toUpperCase());
-    $('#row6').text((words[5]).toUpperCase());
-}
-*/
 async function getRandomWords(e) {
     e.preventDefault();
     const subject = $('[name="subject"]').val();
@@ -69,34 +52,33 @@ async function getRandomWords(e) {
     $('#row5').text('_'.repeat(words[5].length));
 }
 
-// Event listener for player 1 input
+// Event-listener for player1Input
 $('#player1Input').on('keypress', function (e) {
-    if (e.which === 13) { // Check if the Enter key is pressed
+    if (e.which === 13) { // #13 = Enter key
         const guessWord = $(this).val().trim(); // Get the input value, trim() whitespace
-        if (guessWord) { // Ensure the input is not empty
-            revealWord(guessWord); // Call revealWord with the guessed word
-            $(this).val(''); // Clear the input field after submission
+        if (guessWord) { // if there is an input..
+            revealWord(guessWord); // Call revealWord with the guesseWord as in-parameter
+            $(this).val(''); // Clear the input-field afterwards
         }
     }
 });
-
 // Function to reveal the word and update the score
 function revealWord(guessWord) {
-    // Convert the guessed word to uppercase
+    // Convert the guessed word to uppercase for later comparision
     guessWord = guessWord.toUpperCase();
 
     // Assuming iterating through words array
     for (let i = 0; i < words.length; i++) {
-        // Convert each word in the array to uppercase for comparison
-        if (words[i].toUpperCase() === guessWord) {
-            $('#row' + i).text((words[i]).toUpperCase()); // Replace underscore with the actual word
+        if (words[i].toUpperCase() === guessWord) { // .toUpperCase for same comparison
+            $('#row' + i).text((words[i]).toUpperCase()); // Replace .text('_'.repeat(words[i].length)); with the actual word
 
             // Update current score
             currentScore = parseInt($('#player1Score').text()); // Get current score
             currentScore += 5; // Increment score by 5
             $('#player1Score').text(currentScore); // Update score display
             $('#player1Input').val(''); // Clear input field after submission
-            checkWin(); // Call function to check for win condition
+            revealedWords.Add(guessWord);
+            //checkWin(); // Call function to check for win condition
             break; // Exit loop after finding the word
         }
     }
@@ -111,7 +93,6 @@ async function getAllWord(e) {
     console.log(response);
     $('#message').text('Change?');
 }
-
 
 
 /*
