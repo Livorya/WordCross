@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word!Association</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js" defer></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+    <link rel="stylesheet" href="style.css">
+</head>
 
   <body>
     <!-- Header/Title -->
     <section class="header">
-      <h1 class="wordTitle">Word!</h1>
-      <h1 class="associationTitle">Association</h1>
+        <h1 class="wordTitle">Word!</h1>
+        <h1 class="associationTitle">Association</h1>
     </section>
 
-    <!-- Display current subject category -->
+        <!-- Display current subject category -->
     <h1 id="subjectTitle">Animals</h1>
 
     <!-- GameplayScreen wrapper -->
     <section class="gameplayScreen">
-      <!-- Player 1 container -->
-      <section class="player1Container">
-        <h4>Incorrect</h4>
-        <!-- Display for Player 1 incorrect words -->
+
+        <!-- Player 1 container -->
+        <section class="player1Container">
+            <h4>Incorrect</h4>
+            <!-- Display for Player 1 incorrect words -->
         <div class="playerWordField"></div>
         <!--words from player1Input gets added to <ul>-->
         <ul id="player1IncorrectWords">
@@ -77,23 +79,26 @@
         />
       </section>
 
-      <section class="timer"><span id="timer">00:27</span></section>
-
-      <section class="hint">
+    <section class="timer" id="timer">00:00</section>
+    
+    <section class="hint">
         <h5 id="hint">'Flightless and dressed for formal occasions.'</h5>
-      </section>
     </section>
 
-    <footer>
-      <p>Testing</p>
-      <form id="subject-check">
+</section>
+
+<footer>
+    <p>Testing</p>
+    <form id="subject-check">
         <label>Test database</label>
-        <input type="number" name="subject" placeholder="1-6" />
+        <input type="number" name="subject" placeholder="1-6">
         <button id="test-get-word">Test Get Word</button>
         <button id="test-get-subject-words">Test Get Subject Words</button>
         <button id="test-get-random-words">Test Get Random Words</button>
-      </form>
-      <p id="message"></p>
-    </footer>
-  </body>
+    </form>
+    <p id="message"></p>
+</footer>
+
+
+</body>
 </html>
