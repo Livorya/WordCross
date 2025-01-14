@@ -56,16 +56,28 @@ async function getRandomWords(e) {
 $('#player1Input').on('keypress', function (e) {
     if (e.which === 13) { // #13 = Enter key
         const guessWord = $(this).val().trim(); // Get the input value, trim() whitespace
-        if (guessWord) { // if there is an input..
-            revealWord(guessWord); // Call revealWord with the guesseWord as in-parameter
-            $(this).val(''); // Clear the input-field afterwards
-        }
+        checkWord(guessWord);
     }
 });
+function checkWord(guessWord) {
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].toUpperCase() === (guessWord.toUpperCase())) { // if there is an input..
+            revealWord(guessWord); // Call revealWord with the guesseWord as in-parameter
+            $('#player1Input').val(''); // Clear the input-field afterwards
+        } else {
+            //incorrectGuess(guessWord);
+            $('#player1Input').val(''); // Clear the input-field afterwards
+        }
+    }
+}
+
 // Function to reveal the word and update the score
 function revealWord(guessWord) {
     // Convert the guessed word to uppercase for later comparision
     guessWord = guessWord.toUpperCase();
+    if(revealedWords.includes(guessWord)) {
+        return;
+    }
 
     // Assuming iterating through words array
     for (let i = 0; i < words.length; i++) {
@@ -73,8 +85,7 @@ function revealWord(guessWord) {
             $('#row' + i).text((words[i]).toUpperCase()); // Replace .text('_'.repeat(words[i].length)); with the actual word
 
             // Check for already revealed words
-            revealedWords.Add(guessWord);
-            
+            revealedWords.push(guessWord);
 
             // Update current score
             currentScore = parseInt($('#player1Score').text()); // Get current score
@@ -87,8 +98,6 @@ function revealWord(guessWord) {
         }
     }
 }
-
-
 
 // FIXME: response is not handled correctly
 async function getAllWord(e) {
