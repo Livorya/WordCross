@@ -7,7 +7,6 @@ $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord f
 
 
 
-
 // Upper Scope variables:
 let words = []; // Store 6 random words in this array
 let hints = [];
@@ -35,21 +34,14 @@ async function getSubjectWords(e) {
     $('#message').text('All Subject Words:\n ' + words.join(', ')); //joins/concatenates the words array into the string
 }
 
-
-
-
+// Gets 6 random words with corresponding hints and then splits/pushes them into two separate arrays.
+// Displays _ _ _ _ & hints
 async function getRandomWordsWithHints(e) {
     e.preventDefault();
     const subject = $('[name="subject"]').val();
     const response = await fetch('/random-words-with-hints/' + subject);
 
-    if (!response.ok) {
-        console.error("Failed to fetch words with hints:", response.statusText);
-        return;
-    }
-
-    
-    const data = await response.json(); // Ensure this matches backend structure
+    const data = await response.json(); // parses C#-list into JS-array using .json and stores in variable "data"
 
     // Extract words and hints
     let newWords = [];
@@ -61,16 +53,12 @@ async function getRandomWordsWithHints(e) {
     words = newWords;
     hints = newHints;
     
-
-    // Display underscores and hints
+    // Loops out display with underscores and hints
     for (let i = 0; i < words.length; i++) {
         $(`#row${i}`).text('_'.repeat(words[i].length)); // Display underscores
         $(`#hint${i}`).text(hints[i]); // Display the corresponding hint
     }
 }
-
-
-
 
 
 // Event-listener for player1Input
@@ -120,17 +108,7 @@ function revealWord(guessWord) {
     }
 }
 
-// FIXME: response is not handled correctly
-async function getAllWord(e) {
-    e.preventDefault(); // not reload page on form submit
-    const response = await fetch('/api/allWords/'); // get (read)
-    console.log(response);
-    $('#message').text('Change?');
-}
-
-
  // Round timer
-
 let seconds = 0;
 let minutes = 0;
 
