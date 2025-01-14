@@ -2,6 +2,7 @@
 $('#test-get-word').on('click', getWord); // Button for getWord
 $('#test-get-subject-words').on('click', getSubjectWords); // Button for getSubjectWords
 $('#test-get-random-words').on('click', getRandomWords); // Button for getRandomWords
+$('#test-get-random-words-with-hints').on('click', getRandomWordsWithHints);
 
 $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord form
 
@@ -51,6 +52,33 @@ async function getRandomWords(e) {
     $('#row4').text('_'.repeat(words[4].length));
     $('#row5').text('_'.repeat(words[5].length));
 }
+
+async function getRandomWordsWithHints(e) {
+    e.preventDefault();
+    const subject = $('[name="subject"]').val();
+    const response = await fetch('/random-words-with-hints/' + subject);
+
+    if (!response.ok) {
+        console.error("Failed to fetch words with hints:", response.statusText);
+        return;
+    }
+
+    const data = await response.json(); // Ensure this matches backend structure
+
+    // Extract words and hints
+    words = data.map(item => item.Word); // Store words globally
+    const hints = data.map(item => item.Hint); // Extract hints
+
+    // Display underscores and hints
+    for (let i = 0; i < words.length; i++) {
+        $(`#row${i}`).text('_'.repeat(words[i].length)); // Display underscores
+        $(`#hint${i}`).text(hints[i]); // Display the corresponding hint
+    }
+}
+
+
+
+
 
 // Event-listener for player1Input
 $('#player1Input').on('keypress', function (e) {
