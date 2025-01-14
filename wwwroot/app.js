@@ -63,11 +63,15 @@ async function getRandomWordsWithHints(e) {
         return;
     }
 
+    const hints = [];
     const data = await response.json(); // Ensure this matches backend structure
-
+    for (let i = 0; i < data.length; i++){
+        words.push(data[i].split(";")[0]);
+        hints.push(data[i].split(";")[1]);
+    }
     // Extract words and hints
-    words = data.map(item => item.Word); // Store words globally
-    const hints = data.map(item => item.Hint); // Extract hints
+    //words = data.split(";")[0]; // Store words globally
+    //const hints = data.split(";")[1]; // Extract hints
 
     // Display underscores and hints
     for (let i = 0; i < words.length; i++) {
