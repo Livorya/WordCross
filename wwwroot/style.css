@@ -48,6 +48,56 @@ ul {
     text-align: left;
 }
 
+/* The Modal (background) */
+.modal {
+    display: block; /*none to be hidden by default*/
+    position: fixed;
+    z-index: 2; /* have to use index 2 because subjectTitle uses index 1 */
+    top: 0;
+    left: 0;
+    /* full screen cover: */
+    width: 100%;
+    height: 100%;
+    /* i love blur :-) */
+    backdrop-filter: blur(5px);
+    /* center with flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#subject-modal-content {
+    background-color: var(--purple-800);
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black w/ opacity */
+    margin: 0 auto;
+    border: 3px solid var(--purple-800);
+    width: 100%;
+    max-width: 500px;
+}
+.categoryModalGrid {
+    grid-area: categoryGrid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* */
+
 .header {
     background-color: var(--purple-800);
     border: 6px dashed var(--fuchsia-800);
@@ -409,8 +459,6 @@ ul {
             box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
             background-color: var(--green-700);
         }
-
-
 
 .categoryGrid {
     grid-area: categoryGrid;

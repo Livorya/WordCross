@@ -126,9 +126,18 @@ function updateScore(score) {
 function checkWin() {
     if (revealedWords.length === words.length) {
         console.log("Congratulations! You won!!");
-        // open modal
+        // Show the modal
+        $('#subject-modal').css('display', 'block');
     }
 }
+
+// Add this to handle closing the modal if needed
+$(document).ready(function() {
+    // Close modal when clicking a category button
+    $('.categoryBtn').on('click', function() {
+        $('#subject-modal').css('display', 'none');
+    });
+});
 
  // Round timer
 let seconds = 0;
