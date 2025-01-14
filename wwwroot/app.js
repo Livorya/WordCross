@@ -72,12 +72,16 @@ function revealWord(guessWord) {
         if (words[i].toUpperCase() === guessWord) { // .toUpperCase for same comparison
             $('#row' + i).text((words[i]).toUpperCase()); // Replace .text('_'.repeat(words[i].length)); with the actual word
 
+            // Check for already revealed words
+            revealedWords.Add(guessWord);
+            
+
             // Update current score
             currentScore = parseInt($('#player1Score').text()); // Get current score
             currentScore += 5; // Increment score by 5
             $('#player1Score').text(currentScore); // Update score display
             $('#player1Input').val(''); // Clear input field after submission
-            revealedWords.Add(guessWord);
+            
             //checkWin(); // Call function to check for win condition
             break; // Exit loop after finding the word
         }
