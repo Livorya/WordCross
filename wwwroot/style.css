@@ -114,6 +114,9 @@ ul {
     text-align: left;
     padding: 0px 10px;
 }
+        #player1IncorrectWords {
+            color: red;
+        }
 
 .gameboardContainer {
     grid-area: gameboardContainer;

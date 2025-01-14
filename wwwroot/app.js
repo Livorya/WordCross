@@ -60,7 +60,6 @@ async function getRandomWordsWithHints(e) {
     }
 }
 
-
 // Event-listener for player1Input
 $('#player1Input').on('keypress', function (e) {
     if (e.which === 13) { // #13 = Enter key
@@ -68,15 +67,21 @@ $('#player1Input').on('keypress', function (e) {
         checkWord(guessWord);
     }
 });
+
 function checkWord(guessWord) {
+    let foundWord = false; // gets toggled if words.[i] === guessWord
+
     for (let i = 0; i < words.length; i++) {
         if (words[i].toUpperCase() === (guessWord.toUpperCase())) { // if there is an input..
             revealWord(guessWord); // Call revealWord with the guesseWord as in-parameter
             $('#player1Input').val(''); // Clear the input-field afterwards
-        } else {
-            //incorrectGuess(guessWord);
-            $('#player1Input').val(''); // Clear the input-field afterwards
+            foundWord = true; // toggle if found
+            break; // break after finding word
         }
+    }
+    if (foundWord == false) { // only runs if for-loop doesn't match guessWord with words[i]
+        incorrectGuess(guessWord); // calls incorrectGuess that appends <li>
+        $('#player1Input').val(''); // Clear the input-field afterwards
     }
 }
 
@@ -84,7 +89,7 @@ function checkWord(guessWord) {
 function revealWord(guessWord) {
     // Convert the guessed word to uppercase for later comparision
     guessWord = guessWord.toUpperCase();
-    if(revealedWords.includes(guessWord)) {
+    if (revealedWords.includes(guessWord)) {
         return;
     }
 
@@ -96,16 +101,26 @@ function revealWord(guessWord) {
             // Check for already revealed words
             revealedWords.push(guessWord);
 
-            // Update current score
-            currentScore = parseInt($('#player1Score').text()); // Get current score
-            currentScore += 5; // Increment score by 5
-            $('#player1Score').text(currentScore); // Update score display
-            $('#player1Input').val(''); // Clear input field after submission
-            
+            updateScore(5);
+
             //checkWin(); // Call function to check for win condition
             break; // Exit loop after finding the word
         }
     }
+}
+
+function incorrectGuess(guessWord) {
+    $('#player1IncorrectWords').append(`<li/>${guessWord}`);
+    updateScore(-1);
+    return;
+}
+
+function updateScore(score) {
+    // Update current score
+    currentScore = parseInt($('#player1Score').text()); // Get current score
+    currentScore += score;
+    $('#player1Score').text(currentScore); // Update score display
+    $('#player1Input').val(''); // Clear input field after submission
 }
 
  // Round timer
