@@ -65,7 +65,7 @@ function checkWord(guessWord) {
             revealWord(guessWord); // Call revealWord with the guesseWord as in-parameter
             $('#player1Input').val(''); // Clear the input-field afterwards
         } else {
-            incorrectGuess(guessWord);
+            //incorrectGuess(guessWord);
             $('#player1Input').val(''); // Clear the input-field afterwards
         }
     }
