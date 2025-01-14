@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&family=Lilita+One&display=swap');
 
 :root {
-    --hint-800: #706488;
+    --hint-800: #897aa7;
     --hint-700: #7331fa;
     
     --purple-800: #471980;
@@ -122,7 +122,7 @@ ul {
     background-color: var(--purple-800);
     margin: 0px 15px;
     padding: 5px;
-    padding-top: 40px; 
+    padding-top: 30px; 
     box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.4);
 
     display: grid;
@@ -224,6 +224,7 @@ ul {
     letter-spacing: 0px;
     margin-right: 5%;
     margin-top: -2%;
+    padding-bottom: 5px;
     border-bottom: 1px solid var(--hint-700);
     color: var(--hint-800);
 }
