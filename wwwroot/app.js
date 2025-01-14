@@ -61,11 +61,11 @@ $('#player1Input').on('keypress', function (e) {
 });
 function checkWord(guessWord) {
     for (let i = 0; i < words.length; i++) {
-        if (words[i].toUpperCase().includes(guessWord.toUpperCase())) { // if there is an input..
+        if (words[i].toUpperCase() === (guessWord.toUpperCase())) { // if there is an input..
             revealWord(guessWord); // Call revealWord with the guesseWord as in-parameter
             $('#player1Input').val(''); // Clear the input-field afterwards
         } else {
-            // Calling incorrectGuess(guessWord)
+            incorrectGuess(guessWord);
             $('#player1Input').val(''); // Clear the input-field afterwards
         }
     }
@@ -75,6 +75,9 @@ function checkWord(guessWord) {
 function revealWord(guessWord) {
     // Convert the guessed word to uppercase for later comparision
     guessWord = guessWord.toUpperCase();
+    if(revealedWords.includes(guessWord)) {
+        return;
+    }
 
     // Assuming iterating through words array
     for (let i = 0; i < words.length; i++) {
@@ -95,8 +98,6 @@ function revealWord(guessWord) {
         }
     }
 }
-
-
 
 // FIXME: response is not handled correctly
 async function getAllWord(e) {
