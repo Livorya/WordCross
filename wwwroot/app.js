@@ -1,13 +1,15 @@
 // Button test area:
 $('#test-get-word').on('click', getWord); // Button for getWord
 $('#test-get-subject-words').on('click', getSubjectWords); // Button for getSubjectWords
-$('#test-get-random-words').on('click', getRandomWords); // Button for getRandomWords
+$('#test-get-random-words-with-hints').on('click', getRandomWordsWithHints);
 
 $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord form
 
 
+
 // Upper Scope variables:
 let words = []; // Store 6 random words in this array
+let hints = [];
 let revealedWords = []; // Store revealed words for checking/point-handling
 let currentScore = 0; // Store currentScore
 
@@ -15,7 +17,7 @@ async function getWord(e) {
     e.preventDefault(); // not reload page on form submit
     const subject = $('[name="subject"]').val();
     const response = await fetch('/subject-check/' + subject); // get (read)
-
+    
     const word = await response.text(); // Use .text() if your server returns plain text
     $('#message').text('Single Word from subject:\n ' + word);
 }
@@ -26,28 +28,36 @@ async function getSubjectWords(e) {
     e.preventDefault(); // not reload page on form submit
     const subject = $('[name="subject"]').val();
     const response = await fetch('/subject-words/' + subject); // get (read)
-
+    
     // Use .text() if your server returns plain text
     const words = await response.json(); //.json to convert C#list into JS array
     $('#message').text('All Subject Words:\n ' + words.join(', ')); //joins/concatenates the words array into the string
 }
 
-
-async function getRandomWords(e) {
+// Gets 6 random words with corresponding hints and then splits/pushes them into two separate arrays.
+// Displays _ _ _ _ & hints
+async function getRandomWordsWithHints(e) {
     e.preventDefault();
     const subject = $('[name="subject"]').val();
-    const response = await fetch('/random-words/' + subject);
-    //.json converts C#-list into a JS-array
-    words = await response.json(); // Store the fetched words in the global words array
+    const response = await fetch('/random-words-with-hints/' + subject);
 
-    // Place each word [index] into #row1 -> #row6 as underscores based on word length
-    // Create/repeat underscores based on the length of the word
-    $('#row0').text('_'.repeat(words[0].length));
-    $('#row1').text('_'.repeat(words[1].length));
-    $('#row2').text('_'.repeat(words[2].length));
-    $('#row3').text('_'.repeat(words[3].length));
-    $('#row4').text('_'.repeat(words[4].length));
-    $('#row5').text('_'.repeat(words[5].length));
+    const data = await response.json(); // parses C#-list into JS-array using .json and stores in variable "data"
+
+    // Extract words and hints
+    let newWords = [];
+    let newHints = [];
+    for (let i = 0; i < data.length; i++){
+        newWords.push(data[i].split(";")[0]);
+        newHints.push(data[i].split(";")[1]);
+    }
+    words = newWords;
+    hints = newHints;
+    
+    // Loops out display with underscores and hints
+    for (let i = 0; i < words.length; i++) {
+        $(`#row${i}`).text('_'.repeat(words[i].length)); // Display underscores
+        $(`#hint${i}`).text(hints[i]); // Display the corresponding hint
+    }
 }
 
 // Event-listener for player1Input
@@ -113,18 +123,7 @@ function updateScore(score) {
     $('#player1Input').val(''); // Clear input field after submission
 }
 
-
-// FIXME: response is not handled correctly
-async function getAllWord(e) {
-    e.preventDefault(); // not reload page on form submit
-    const response = await fetch('/api/allWords/'); // get (read)
-    console.log(response);
-    $('#message').text('Change?');
-}
-
-
-// Round timer
-
+ // Round timer
 let seconds = 0;
 let minutes = 0;
 
