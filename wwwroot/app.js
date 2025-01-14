@@ -101,6 +101,14 @@ function revealWord(guessWord) {
             // Check for already revealed words
             revealedWords.push(guessWord);
 
+            // flash effect for correct guess
+            const input = $('#player1Input');
+            // .addClass and .removeClass toggles CSS
+            input.addClass('flash-correct'); 
+            setTimeout(function() { // setTumeout 500millisec delays class-toggle 
+                input.removeClass('flash-correct');
+            }, 500);
+
             updateScore(5);
 
             //checkWin(); // Call function to check for win condition
@@ -111,6 +119,14 @@ function revealWord(guessWord) {
 
 function incorrectGuess(guessWord) {
     $('#player1IncorrectWords').append(`<li/>${guessWord}`);
+    
+    // flash effect for incorrect guess
+    const input = $('#player1Input');
+    input.addClass('flash-incorrect');
+    setTimeout(function() {
+        input.removeClass('flash-incorrect');
+    }, 500);
+    
     updateScore(-1);
     return;
 }

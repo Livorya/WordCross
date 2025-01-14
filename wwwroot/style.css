@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&family=Lilita+One&display=swap');
 
 :root {
+    --incorrect-red-700: #dc2626;
+
     --hint-800: #897aa7;
     --hint-700: #7331fa;
     
@@ -115,7 +117,7 @@ ul {
     padding: 0px 10px;
 }
         #player1IncorrectWords {
-            color: red;
+            color: var(--incorrect-red-700);
         }
 
 .gameboardContainer {
@@ -167,12 +169,22 @@ ul {
     margin: 5px 0px;
     border: none;
     box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
 }
 .playerInput::placeholder {
     font-family: 'Quicksand';
     font-weight: 600;
     color: ghostwhite;
     text-align: center;
+}
+
+.flash-correct {
+    background-color: var(--green-700) !important;
+    /*had to add !important for color override */
+}
+
+.flash-incorrect {
+    background-color: var(--incorrect-red-700) !important;
 }
 
 #player1Input {
@@ -522,5 +534,7 @@ ul {
         min-height: 600px;
     }
 } 
+
+
 
 
