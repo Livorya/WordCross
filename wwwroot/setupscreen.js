@@ -7,6 +7,14 @@ $('.categoryBtn').on('click', function(e) {
     console.log(id);
 })
 
+$('#startBtn').on('click', function(e) {
+    e.preventDefault();
+    let inputvalue = $('#roundInput').val();
+    console.log(inputvalue);
+})
+
+
+
 
 
 
