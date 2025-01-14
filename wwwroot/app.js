@@ -11,6 +11,7 @@ $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord f
 
 // Upper Scope variables:
 let words = []; // Store 6 random words in this array
+let hints = [];
 let revealedWords = []; // Store revealed words for checking/point-handling
 let currentScore = 0; // Store currentScore
 
@@ -63,15 +64,19 @@ async function getRandomWordsWithHints(e) {
         return;
     }
 
-    const hints = [];
+    
     const data = await response.json(); // Ensure this matches backend structure
-    for (let i = 0; i < data.length; i++){
-        words.push(data[i].split(";")[0]);
-        hints.push(data[i].split(";")[1]);
-    }
+
     // Extract words and hints
-    //words = data.split(";")[0]; // Store words globally
-    //const hints = data.split(";")[1]; // Extract hints
+    let newWords = [];
+    let newHints = [];
+    for (let i = 0; i < data.length; i++){
+        newWords.push(data[i].split(";")[0]);
+        newHints.push(data[i].split(";")[1]);
+    }
+    words = newWords;
+    hints = newHints;
+    
 
     // Display underscores and hints
     for (let i = 0; i < words.length; i++) {
