@@ -56,12 +56,21 @@ async function getRandomWords(e) {
 $('#player1Input').on('keypress', function (e) {
     if (e.which === 13) { // #13 = Enter key
         const guessWord = $(this).val().trim(); // Get the input value, trim() whitespace
-        if (guessWord) { // if there is an input..
-            revealWord(guessWord); // Call revealWord with the guesseWord as in-parameter
-            $(this).val(''); // Clear the input-field afterwards
-        }
+        checkWord(guessWord);
     }
 });
+function checkWord(guessWord) {
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].toUpperCase().includes(guessWord.toUpperCase())) { // if there is an input..
+            revealWord(guessWord); // Call revealWord with the guesseWord as in-parameter
+            $('#player1Input').val(''); // Clear the input-field afterwards
+        } else {
+            // Calling incorrectGuess(guessWord)
+            $('#player1Input').val(''); // Clear the input-field afterwards
+        }
+    }
+}
+
 // Function to reveal the word and update the score
 function revealWord(guessWord) {
     // Convert the guessed word to uppercase for later comparision
