@@ -11,7 +11,6 @@ $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord f
 // Upper Scope variables:
 let words = []; // Store 6 random words in this array
 let revealedWords = []; // Store revealed words for checking/point-handling
-let incorrectGuess = []; // Store incorrectWords for checking
 let currentScore = 0; // Store currentScore
 
 async function getWord(e) {
@@ -57,11 +56,8 @@ async function getRandomWords(e) {
 $('#player1Input').on('keypress', function (e) {
     if (e.which === 13) { // #13 = Enter key
         const guessWord = $(this).val().trim(); // Get the input value, trim() whitespace
-        if (words.includes(guessWord)) { // if there is an input..
-            revealWord(guessWord); // Call revealWord to replace .split('_') with actual word
-            $(this).val(''); // Clear the input-field afterwards
-        } else {
-            incorrectGuess(guessWord); // Call incorrectGuess to .append(<'li'>)
+        if (guessWord) { // if there is an input..
+            revealWord(guessWord); // Call revealWord with the guesseWord as in-parameter
             $(this).val(''); // Clear the input-field afterwards
         }
     }
@@ -74,34 +70,23 @@ function revealWord(guessWord) {
     // Assuming iterating through words array
     for (let i = 0; i < words.length; i++) {
         if (words[i].toUpperCase() === guessWord) { // .toUpperCase for same comparison
-            $('#row' + i).text(words[i].toUpperCase()); // Replace .text('_'.repeat(words[i].length)); with the actual word
+            $('#row' + i).text((words[i]).toUpperCase()); // Replace .text('_'.repeat(words[i].length)); with the actual word
 
-            // add into array for already revealed words
-            revealedWords.Add(guessWord);
+            // Check for already revealed words
+            revealedWords.push(guessWord);
 
             // Update current score
-            if (!revealedWords.includes(guessWords)) {
             currentScore = parseInt($('#player1Score').text()); // Get current score
             currentScore += 5; // Increment score by 5
             $('#player1Score').text(currentScore); // Update score display
             $('#player1Input').val(''); // Clear input field after submission
             
             //checkWin(); // Call function to check for win condition
-        }
             break; // Exit loop after finding the word
         }
     }
 }
 
-function incorrectGuess(guessWord) {
-    if (!incorrectGuess.includes(guessWord))
-    $('#player1IncorrectWords').Append('<li/>').text(guessWord);
-    // update currentScore
-    currentScore = parseInt($('#player1Score').text()); // Get current score
-    currentScore -= 1; // Increment score by 5
-    $('#player1Score').text(currentScore); // Update score display
-    $('#player1Input').val(''); // Clear input field after submission
-}
 
 
 // FIXME: response is not handled correctly
