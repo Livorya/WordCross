@@ -126,16 +126,16 @@ function updateScore(score) {
 function checkWin() {
     if (revealedWords.length === words.length) {
         console.log("Congratulations! You won!!");
-        // Show the modal
-        $('#subject-modal').css('display', 'block');
+        // Show the modal with class-toggle
+        $('#subject-modal').addClass('show');
     }
 }
 
-// Add this to handle closing the modal if needed
+// Update the modal close handler
 $(document).ready(function() {
-    // Close modal when clicking a category button
-    $('.categoryBtn').on('click', function() {
-        $('#subject-modal').css('display', 'none');
+    $('.categoryBtn').on('click', function () {
+        // Hide the modal with calss-toggle
+        $('#subject-modal').removeClass('show');
     });
 });
 

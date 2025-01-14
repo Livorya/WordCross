@@ -50,7 +50,7 @@ ul {
 
 /* The Modal (background) */
 .modal {
-    display: block; /*none to be hidden by default*/
+    display: none; /*none to be hidden by default*/
     position: fixed;
     z-index: 2; /* have to use index 2 because subjectTitle uses index 1 */
     top: 0;
@@ -60,18 +60,30 @@ ul {
     height: 100%;
     /* i love blur :-) */
     backdrop-filter: blur(5px);
-    /* center with flexbox */
+    overflow: hidden;
+}
+
+ /* center with flexbox and .show is class-toggle in js*/
+.modal.show {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#subject-modal-content {
+.modal h1 {
+    font-size: 3rem;
     background-color: var(--purple-800);
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.2); /*transp bg*/
+}
+.modal h4 {
+    padding-bottom: 10px;
+    background-color: var(--purple-800);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#subject-modal-content {
+    background-color: transparent;
     /* Black w/ opacity */
     margin: 0 auto;
-    border: 3px solid var(--purple-800);
     width: 100%;
     max-width: 500px;
 }
@@ -80,20 +92,6 @@ ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-}
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 /* */
