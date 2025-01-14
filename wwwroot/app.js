@@ -105,7 +105,10 @@ function revealWord(guessWord) {
 }
 
 function incorrectGuess(guessWord) {
+    
     $('#player1IncorrectWords').append(`<li/>${guessWord}`);
+
+
     return;
 }
 
