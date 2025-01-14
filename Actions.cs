@@ -14,7 +14,6 @@ public class Actions
         app.MapGet("/subject-check/{subject}", GetWord);
         app.MapGet("/api/allWords/", GetAllWords);
         app.MapGet("/subject-words/{subject}", GetSubjectWords);
-        app.MapGet("/random-words/{subject}", GetRandomWords);
         app.MapGet("/random-words-with-hints/{subject}", GetRandomWordsWithHints);
     }
 
@@ -86,29 +85,6 @@ public class Actions
         return words; // returns words list
     }
 
-    // Returns 6 random words from specified subject
-    async Task<List<string>> GetRandomWords(int subject)
-    {
-        var query = @"SELECT name 
-                      FROM word 
-                      WHERE subject_id = $1 
-                      ORDER BY RANDOM() 
-                      LIMIT 6";
-
-        List<string> words = new();
-        await using (var cmd = _db.CreateCommand(query))
-        {
-            cmd.Parameters.AddWithValue(subject);
-            await using (var reader = await cmd.ExecuteReaderAsync())
-            {
-                while (await reader.ReadAsync())
-                {
-                    words.Add(reader.GetString(0));
-                }
-            }
-        }
-        return words;
-    }
 
     // Returns 6 random words with their hints for a given subject
     async Task<List<string>> GetRandomWordsWithHints(int subject)

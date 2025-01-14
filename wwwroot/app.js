@@ -1,7 +1,6 @@
 // Button test area:
 $('#test-get-word').on('click', getWord); // Button for getWord
 $('#test-get-subject-words').on('click', getSubjectWords); // Button for getSubjectWords
-$('#test-get-random-words').on('click', getRandomWords); // Button for getRandomWords
 $('#test-get-random-words-with-hints').on('click', getRandomWordsWithHints);
 
 $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord form
@@ -37,22 +36,7 @@ async function getSubjectWords(e) {
 }
 
 
-async function getRandomWords(e) {
-    e.preventDefault();
-    const subject = $('[name="subject"]').val();
-    const response = await fetch('/random-words/' + subject);
-    //.json converts C#-list into a JS-array
-    words = await response.json(); // Store the fetched words in the global words array
 
-    // Place each word [index] into #row1 -> #row6 as underscores based on word length
-    // Create/repeat underscores based on the length of the word
-    $('#row0').text('_'.repeat(words[0].length)); 
-    $('#row1').text('_'.repeat(words[1].length));
-    $('#row2').text('_'.repeat(words[2].length));
-    $('#row3').text('_'.repeat(words[3].length));
-    $('#row4').text('_'.repeat(words[4].length));
-    $('#row5').text('_'.repeat(words[5].length));
-}
 
 async function getRandomWordsWithHints(e) {
     e.preventDefault();
