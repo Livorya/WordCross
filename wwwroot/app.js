@@ -97,7 +97,7 @@ function revealWord(guessWord) {
     for (let i = 0; i < words.length; i++) {
         if (words[i].toUpperCase() === guessWord) { // .toUpperCase for same comparison
             $('#row' + i).text((words[i]).toUpperCase()); // Replace .text('_'.repeat(words[i].length)); with the actual word
-
+            $('#row' + i).css('color', 'var(--player-blue-700)');
             // Check for already revealed words
             revealedWords.push(guessWord);
 
