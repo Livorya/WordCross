@@ -60,14 +60,19 @@ $('#player1Input').on('keypress', function (e) {
     }
 });
 function checkWord(guessWord) {
+    let foundWord = false; // gets toggled if words.[i] === guessWord
+
     for (let i = 0; i < words.length; i++) {
         if (words[i].toUpperCase() === (guessWord.toUpperCase())) { // if there is an input..
             revealWord(guessWord); // Call revealWord with the guesseWord as in-parameter
             $('#player1Input').val(''); // Clear the input-field afterwards
-        } else {
-            //incorrectGuess(guessWord);
-            $('#player1Input').val(''); // Clear the input-field afterwards
-        }
+            foundWord = true; // toggle if found
+            break; // break after finding word
+        } 
+    }
+    if (foundWord == false) { // only runs if for-loop doesn't match guessWord with words[i]
+        incorrectGuess(guessWord); // calls incorrectGuess that appends <li>
+        $('#player1Input').val(''); // Clear the input-field afterwards
     }
 }
 
@@ -98,6 +103,12 @@ function revealWord(guessWord) {
         }
     }
 }
+
+function incorrectGuess(guessWord) {
+    $('#player1IncorrectWords').append(`<li/>${guessWord}`);
+    return;
+}
+
 
 // FIXME: response is not handled correctly
 async function getAllWord(e) {
