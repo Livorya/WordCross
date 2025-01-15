@@ -11,6 +11,7 @@ $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord f
 let words = []; // Store 6 random words in this array
 let hints = []; // Store hints correlated to content of words-array
 let revealedWords = []; // Store revealed words for checking/point-handling
+let incorrectWords = [];
 let currentScore = 0; // Store currentScore
 
 async function getWord(e) {
