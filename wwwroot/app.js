@@ -9,7 +9,7 @@ $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord f
 
 // Upper Scope variables:
 let words = []; // Store 6 random words in this array
-let hints = [];
+let hints = []; // Store hints correlated to content of words-array
 let revealedWords = []; // Store revealed words for checking/point-handling
 let currentScore = 0; // Store currentScore
 
