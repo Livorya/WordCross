@@ -111,7 +111,7 @@ function revealWord(guessWord) {
 
             updateScore(5);
 
-            //checkWin(); // Call function to check for win condition
+            checkWin(); // Call function to check for win condition
             break; // Exit loop after finding the word
         }
     }
@@ -137,6 +137,13 @@ function updateScore(score) {
     currentScore += score;
     $('#player1Score').text(currentScore); // Update score display
     $('#player1Input').val(''); // Clear input field after submission
+}
+
+function checkWin() {
+    if (revealedWords.length === words.length) {
+        console.log("Congratulations! You won!!");
+        // open modal
+    }
 }
 
  // Round timer
