@@ -8,7 +8,8 @@ let revealedWords = []; // Store revealed words for checking/point-handling
 let currentScore = 0; // Store currentScore
 let subjectId = 0; // Stores subjectId from .categoryBtn in setupscreen
 let numberOfRounds = 0; // Stores #roundInput from setupscreen
-let incorrectWords = [];
+let incorrectWords = []; // Stores incorrectWords li
+let roundsLeft = 0; // Keeps track of rounds
 
  // Round timer
  let seconds = 0;
@@ -39,7 +40,8 @@ async function startButton(e) {
 async function startGame(){
     subjectId = window.localStorage.getItem("keepId");
     numberOfRounds = window.localStorage.getItem("keepRounds");
-
+    roundsLeft = numberOfRounds; // store chosen #rounds in roundsLeft
+    
     await getRandomWordsWithHints();
 }
 
@@ -162,21 +164,31 @@ function updateScore(score) {
 
 function checkWin() {
     if (revealedWords.length === words.length) {
-        
         // Format the completion time
         const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
         const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
         // Display completion time in modal
         $('#completion-time').text(`${formattedMinutes}:${formattedSeconds}`);
         
+        // Update display for rounds left
+        $('#rounds-left').text(roundsLeft - 1); // Show remaining rounds after current
+        
         // Show the modal
         $('#subject-modal').css('display', 'flex');
     }
 }
 
-$('#startRound').on('click', nextround);
-async function nextround(e){
+$('#startRound').on('click', nextRound);
+async function nextRound(e){
     e.preventDefault();
+    
+    roundsLeft--; // decrease rounds left every nextRound();
+    if (roundsLeft <= 0) {
+        // no rounds left, back to setup screen
+        window.location.href = 'index.html';
+        return;
+    }
+    
     $('#subject-modal').css('display', 'none');
     incorrectWords = [];
     revealedWords = [];

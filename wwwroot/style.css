@@ -93,14 +93,21 @@ ul {
     margin: 5px 0;
     padding: 0px;
 }
-
-.completion-time-container h3 {
-}
-
 .time-display {
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--green-700);
+}
+
+.rounds-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.rounds-display {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--fuchsia-700);
 }
 /* */
 
@@ -599,6 +606,8 @@ background-color: var(--green-700);
         min-height: 600px;
     }
 } 
+
+
 
 
 
