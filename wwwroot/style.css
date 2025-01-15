@@ -61,14 +61,10 @@ ul {
     /* i love blur :-) */
     backdrop-filter: blur(5px);
     overflow: hidden;
-}
-
- /* center with flexbox and .show is class-toggle in js*/
-.modal.show {
-    display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .modal h1 {
     font-size: 3rem;
     background-color: var(--purple-800);

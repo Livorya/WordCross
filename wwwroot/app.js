@@ -126,8 +126,8 @@ function updateScore(score) {
 function checkWin() {
     if (revealedWords.length === words.length) {
         console.log("Congratulations! You won!!");
-        // Show the modal with class-toggle
-        $('#subject-modal').addClass('show');
+        // Show the modal with css display flex
+        $('#subject-modal').css('display', 'flex');
     }
 }
 
