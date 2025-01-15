@@ -2,7 +2,7 @@
 $('#test-get-word').on('click', getWord); // Button for getWord
 $('#test-get-subject-words').on('click', getSubjectWords); // Button for getSubjectWords
 $('#test-get-random-words-with-hints').on('click', getRandomWordsWithHints);
-
+$('.subject-modal').on('click', nextround);
 $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord form
 
 
@@ -156,6 +156,15 @@ function checkWin() {
     }
 }
 
+async function nextround(){
+    $('#subject-modal').css('display', 'none');
+    incorrectWords = [];
+    revealedWords = [];
+    $('#player1IncorrectWords').empty();
+    await getRandomWordsWithHints(subjectId, NumebrOfRounds);
+
+
+}
 
 
  // Round timer
