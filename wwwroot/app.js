@@ -131,13 +131,7 @@ function checkWin() {
     }
 }
 
-// Update the modal close handler
-$(document).ready(function() {
-    $('.categoryBtn').on('click', function () {
-        // Hide the modal with calss-toggle
-        $('#subject-modal').removeClass('show');
-    });
-});
+
 
  // Round timer
 let seconds = 0;
