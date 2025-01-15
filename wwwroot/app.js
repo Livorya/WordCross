@@ -12,6 +12,26 @@ let words = []; // Store 6 random words in this array
 let hints = []; // Store hints correlated to content of words-array
 let revealedWords = []; // Store revealed words for checking/point-handling
 let currentScore = 0; // Store currentScore
+let subjectId = 0; // Stores subjectId from .categoryBtn in setupscreen
+let numberOfRounds = 0; // Stores #roundInput from setupscreen
+
+
+// Event listener for categoryBtn
+$('.categoryBtn').on('click', function(e) {
+    e.preventDefault();
+    $('.categoryBtn').css('color', 'white');
+    $(this).css('color', '#471980');
+    subjectId =  $(this).attr('id');
+    console.log(subjectId);
+})
+// Event listener for startBtn
+$('#startBtn').on('click', function(e) {
+    e.preventDefault();
+    numberOfRounds = $('#roundInput').val();
+    console.log(numberOfRounds);
+})
+
+
 
 async function getWord(e) {
     e.preventDefault(); // not reload page on form submit
@@ -40,7 +60,7 @@ async function getRandomWordsWithHints(e) {
     e.preventDefault();
     const subject = $('[name="subject"]').val();
     const response = await fetch('/random-words-with-hints/' + subject);
-
+    
     const data = await response.json(); // parses C#-list into JS-array using .json and stores in variable "data"
 
     // Extract words and hints
@@ -172,9 +192,11 @@ function updateTimer() {
 }
 
 // Start the timer when the page loads
+/*
 window.onload = function () {
     setInterval(updateTimer, 1000);
 };
+*/
 
 
 /*
