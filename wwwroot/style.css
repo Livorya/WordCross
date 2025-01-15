@@ -178,14 +178,6 @@ ul {
     text-align: center;
 }
 
-.flash-correct {
-    background-color: var(--green-700) !important;
-    /*had to add !important for color override */
-}
-
-.flash-incorrect {
-    background-color: var(--incorrect-red-700) !important;
-}
 
 #player1Input {
     background-color: var(--player-blue-700);
@@ -193,6 +185,13 @@ ul {
 #player1Input:hover {
     background-color: var(--player-blue-800);
     transition: 0.3s ease;
+}
+/* solved it with a compound selector, now !important is not needed */
+#player1Input.flash-correct {
+    background-color: var(--green-700);
+}
+#player1Input.flash-incorrect {
+    background-color: var(--incorrect-red-700) 
 }
 
 #player2Input {
