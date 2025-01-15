@@ -46,23 +46,18 @@ async function startButton(e) {
 }
 
 async function startGame(){
-
     subjectId = window.localStorage.getItem("keepId");
     numberOfRounds = window.localStorage.getItem("keepRounds");
 
-    console.log("subjectId:", subjectId); // Verify subjectId
-    console.log("rounds:", numberOfRounds);
-    
     await getRandomWordsWithHints();
 }
 
 // Gets 6 random words with corresponding hints and then splits/pushes them into two separate arrays.
 // Displays _ _ _ _ & hints
-async function getRandomWordsWithHints(e) {
-    e.preventDefault();
+async function getRandomWordsWithHints() {
     // subject_id is from the temporary testing input field that returns the subject_id 
-    const subject_name = $('.' + subjectId).text();
-    const subject_color = $('.' + subjectId).css('background-color');
+    const subject_name = $('#' + subjectId).text();
+    const subject_color = $('#' + subjectId).css('background-color');
     
     $('#subjectTitle').text(subject_name);
     $('#subjectTitle').css('background-color', subject_color);
