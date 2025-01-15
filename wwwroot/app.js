@@ -17,25 +17,6 @@ let subjectId = 0; // Stores subjectId from .categoryBtn in setupscreen
 let numberOfRounds = 0; // Stores #roundInput from setupscreen
 
 
-// Event listener for categoryBtn
-/*
-$('.categoryBtn').on('click', function(e) {
-    e.preventDefault();
-    $('.categoryBtn').css('color', 'white');
-    $(this).css('color', '#471980');
-    subjectId =  $(this).attr('id');
-    //console.log(subjectId);
-})
-// Event listener for startBtn
-
-$('#startBtn').on('click', function(e) {
-    e.preventDefault();
-    numberOfRounds = $('#roundInput').val();
-    startGame(subjectId);
-    //console.log(numberOfRounds);
-})
-*/
-
 $('.categoryBtn').on('click', getSubjectId);
     
 async function getSubjectId(e) {
@@ -77,11 +58,15 @@ async function startGame(){
 
 // Gets 6 random words with corresponding hints and then splits/pushes them into two separate arrays.
 // Displays _ _ _ _ & hints
-async function getRandomWordsWithHints() {
-    console.log("we're in!");
-    console.log(subjectId, numberOfRounds);
-
-    //$('[name="subject"]').val();
+async function getRandomWordsWithHints(e) {
+    e.preventDefault();
+    // subject_id is from the temporary testing input field that returns the subject_id 
+    const subject_name = $('.' + subjectId).text();
+    const subject_color = $('.' + subjectId).css('background-color');
+    
+    $('#subjectTitle').text(subject_name);
+    $('#subjectTitle').css('background-color', subject_color);
+    
     const response = await fetch('/random-words-with-hints/' + subjectId);
     
     const data = await response.json(); // parses C#-list into JS-array using .json and stores in variable "data"
