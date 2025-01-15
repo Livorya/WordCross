@@ -70,9 +70,10 @@ ul {
 
 .modal h1 {
     font-size: 3rem;
-    margin-bottom: 5px;
+    margin: 5px 0px;
 }
 .modal h4 {
+    font-size: 2rem;
     padding-bottom: 10px;
 }
 #subject-modal-content {
@@ -90,18 +91,41 @@ ul {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
-.completion-time-container {
-    text-align: center;
-    margin: 0;
-    padding: 0;
+.stats-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    margin: 2px 2px;
+    padding: 10px 10px;
 }
-
+.stat-item {
+    text-align: center;
+    padding: 10px;
+    border: 3px dashed var(--hint-800);
+}
+.stat-item h2,
+.stat-item h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--hint-600);
+}
+.time-display,
+.rounds-display {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+}
+.time-display {
+    color: var(--green-700);
+}
+.rounds-display {
+    color: var(--fuchsia-700);
+}
 .completion-time-container h2 {
     font-size: 1.2rem;
     margin: 0;
     color: var(--hint-600);
 }
-
 .time-display {
     font-size: 2rem;
     font-weight: bold;
@@ -109,18 +133,15 @@ ul {
     display: inline-block;
     margin-bottom: 5px;
 }
-
 .rounds-container {
     text-align: center;
     margin: 0;
 }
-
 .rounds-container h3 {
     font-size: 1.2rem;
     margin: 0;
     color: var(--hint-600);
 }
-
 .rounds-display {
     font-size: 2rem;
     font-weight: bold;
@@ -623,6 +644,8 @@ background-color: var(--green-700);
         min-height: 600px;
     }
 } 
+
+
 
 
 
