@@ -9,7 +9,7 @@ $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord f
 
 // Upper Scope variables:
 let words = []; // Store 6 random words in this array
-let hints = [];
+let hints = []; // Store hints correlated to content of words-array
 let revealedWords = []; // Store revealed words for checking/point-handling
 let currentScore = 0; // Store currentScore
 
@@ -97,9 +97,17 @@ function revealWord(guessWord) {
     for (let i = 0; i < words.length; i++) {
         if (words[i].toUpperCase() === guessWord) { // .toUpperCase for same comparison
             $('#row' + i).text((words[i]).toUpperCase()); // Replace .text('_'.repeat(words[i].length)); with the actual word
-
+            $('#row' + i).css('color', 'var(--player-blue-700)'); // Changes color to player-color
             // Check for already revealed words
             revealedWords.push(guessWord);
+
+            // flash effect for correct guess
+            const input = $('#player1Input');
+            // .addClass and .removeClass toggles CSS
+            input.addClass('flash-correct'); 
+            setTimeout(function() { // setTumeout 500millisec delays class-toggle 
+                input.removeClass('flash-correct');
+            }, 500);
 
             updateScore(5);
 
@@ -111,6 +119,14 @@ function revealWord(guessWord) {
 
 function incorrectGuess(guessWord) {
     $('#player1IncorrectWords').append(`<li/>${guessWord}`);
+    
+    // flash effect for incorrect guess
+    const input = $('#player1Input');
+    input.addClass('flash-incorrect');
+    setTimeout(function() {
+        input.removeClass('flash-incorrect');
+    }, 500);
+    
     updateScore(-1);
     return;
 }
