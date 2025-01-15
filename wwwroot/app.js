@@ -5,7 +5,8 @@ $('#test-get-random-words-with-hints').on('click', getRandomWordsWithHints);
 
 $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord form
 
-
+// load page and run startGame()
+window.addEventListener("load", (event) => {  startGame(); });
 
 // Upper Scope variables:
 let words = []; // Store 6 random words in this array
@@ -17,6 +18,7 @@ let numberOfRounds = 0; // Stores #roundInput from setupscreen
 
 
 // Event listener for categoryBtn
+/*
 $('.categoryBtn').on('click', function(e) {
     e.preventDefault();
     $('.categoryBtn').css('color', 'white');
@@ -25,28 +27,62 @@ $('.categoryBtn').on('click', function(e) {
     //console.log(subjectId);
 })
 // Event listener for startBtn
+
 $('#startBtn').on('click', function(e) {
     e.preventDefault();
     numberOfRounds = $('#roundInput').val();
     startGame(subjectId);
     //console.log(numberOfRounds);
 })
+*/
 
-async function startGame(subjectId) {
-    await getRandomWordsWithHints(subjectId);
-    console.log("Starting game with subjectId:", subjectId); // Verify subjectId
+$('.categoryBtn').on('click', getSubjectId);
+    
+async function getSubjectId(e) {
+    e.preventDefault();
+    $('.categoryBtn').css('color', 'white');
+    $(this).css('color', '#471980');
+    subjectId =  $(this).attr('id');
+    //console.log(subjectId);
+}
+
+$('#startBtn').on('click', startButton);
+
+async function startButton(e) {
+    e.preventDefault();
+    numberOfRounds = $('#roundInput').val();
+    
+    console.log("subjectId:", subjectId); // Verify subjectId
+    console.log("rounds:", numberOfRounds);
+    
+    // Store it in localstorage 
+    window.localStorage.setItem('keepId', subjectId);
+    window.localStorage.setItem('keepRounds', numberOfRounds);
+
+    //await startGame();
+
     window.location.href = 'gameplayscreen.html';
+}
+
+async function startGame(){
+
+    subjectId = window.localStorage.getItem("keepId");
+    numberOfRounds = window.localStorage.getItem("keepRounds");
+
+    console.log("subjectId:", subjectId); // Verify subjectId
+    console.log("rounds:", numberOfRounds);
+    
+    await getRandomWordsWithHints();
 }
 
 // Gets 6 random words with corresponding hints and then splits/pushes them into two separate arrays.
 // Displays _ _ _ _ & hints
-async function getRandomWordsWithHints(subjectId) {
-    console.log("we're int!");
+async function getRandomWordsWithHints() {
+    console.log("we're in!");
     console.log(subjectId, numberOfRounds);
 
-    const subject = subjectId;
     //$('[name="subject"]').val();
-    const response = await fetch('/random-words-with-hints/' + subject);
+    const response = await fetch('/random-words-with-hints/' + subjectId);
     
     const data = await response.json(); // parses C#-list into JS-array using .json and stores in variable "data"
 
