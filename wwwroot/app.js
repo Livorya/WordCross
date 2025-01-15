@@ -28,13 +28,13 @@ $('.categoryBtn').on('click', function(e) {
 $('#startBtn').on('click', function(e) {
     e.preventDefault();
     numberOfRounds = $('#roundInput').val();
-    window.location.href = 'index.html' // directs to index.html on click
+    startGame();
+    window.location.href = 'gameplayscreen.html' // directs to index.html on click
     //console.log(numberOfRounds);
 })
 
 async function startGame() {
-
-
+    getRandomWordsWithHints();
 }
 
 async function getWord(e) {

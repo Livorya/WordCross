@@ -1,130 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word!Association</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <title>Word! Associaiton Setup</title>
 </head>
+<body class="setupScreenBody">
 
-  <body>
-    <!-- Header/Title -->
-    <section class="header">
-        <h1 class="wordTitle">Word!</h1>
-        <h1 class="associationTitle">Association</h1>
+<section class="setupScreen">
+    <!-- Left Panel -->
+    <section class="setupPanel">
+        <!-- Game Title -->
+        <section class="header">
+            <h1 class="wordTitle">WORD!</h1>
+            <h1 class="associationTitle">ASSOCIATION</h1>
+        </section>
+
+        <!-- Player Selection -->
+        <section class="playerSelection">
+            <button id="player1Btn" class="playerBtn">1 Player</button>
+            <button id="player2Btn" class="playerBtn">2 Players</button>
+        </section>
+
+        <!-- Game Conditions -->
+        <section class="conditionBox">
+            <h2>Set your conditions</h2>
+            <div class="conditionOptions">
+                <div class="inputWrapper">
+                    <input type="number" class="conditionInput" id="roundInput" value="3" min="1" max="99">
+                    <label>#Rounds</label>
+                </div>
+                <span class="orSpan">or</span>
+                <div class="inputWrapper">
+                    <input type="number" class="conditionInput" id="pointGoalInput" value="0" min="1" max="99">
+                    <label>Point Goal</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Start Button -->
+        <button id="startBtn">Start!</button>
     </section>
 
-        <!-- Display current subject category -->
-    <h1 id="subjectTitle">Animals</h1>
-
-    <!-- GameplayScreen wrapper -->
-    <section class="gameplayScreen">
-
-      <!-- Modal -->
-      <section id="subject-modal" class="modal">
-        <article id="subject-modal-content">
-          <h1>Congratulations!</h1>
-          <h4>Choose your next subject:</h4>
-          <section class="categoryModalGrid">
-            <button id="universeBtn" class="categoryBtn universe">Universe</button>
-            <button id="programmingBtn" class="categoryBtn programming">Programming</button>
-            <button id="musicBtn" class="categoryBtn music">Music</button>
-            <button id="sportBtn" class="categoryBtn sport">Sport</button>
-            <button id="animalsBtn" class="categoryBtn animals">Animals</button>
-            <button id="moviesBtn" class="categoryBtn movies">Movies</button>
-          </section>
-        </article>
-      </section>
-
-        <!-- Player 1 container -->
-        <section class="player1Container">
-            <h4>Incorrect</h4>
-            <!-- Display for Player 1 incorrect words -->
-        <div class="playerWordField"></div>
-        <!--words from player1Input gets added to <ul>-->
-        <ul id="player1IncorrectWords">
-          <!-- .Append(<'li'>) here -->
-        </ul>
-      </section>
-      <!-- Player 1 score and input-field -->
-      <section class="player1ScoreField">
-        <div>
-          <h3>Score: <span id="player1Score">0</span> pts</h3>
-        </div>
-        <input
-          id="player1Input"
-          class="playerInput"
-          type="text"
-          placeholder="Keep on guessing.."
-        />
-      </section>
-
-      <!-- Container for crossword gameplay area -->
-      <section class="gameboardContainer">
-          
-              <div id="row0" class="row"></div>
-              <div id="hint0" class="hint"></div>
-
-              <div id="row1" class="row"></div>
-              <div id="hint1" class="hint"></div>
-
-              <div id="row2" class="row"></div>
-              <div id="hint2" class="hint"></div>
-
-              <div id="row3" class="row"></div>
-              <div id="hint3" class="hint"></div>
-
-              <div id="row4" class="row"></div>
-              <div id="hint4" class="hint"></div>
-
-              <div id="row5" class="row"></div>
-              <div id="hint5" class="hint"></div>
-          
-      </section>
-
-      <!-- Player 2 container -->
-      <section class="player2Container">
-        <h4>Incorrect</h4>
-        <!-- Display for Player 2 incorrect words -->
-        <div class="playerWordField"></div>
-        <!--words from player2Input gets added to <ul>-->
-        <ul id="player2IncorrectWords">
-          <!-- .Append(<'li'>) here -->
-        </ul>
-      </section>
-      <!-- Player 2 score and input-field -->
-      <section class="player2ScoreField">
-        <div>
-          <h3>Score: <span id="player2Score">0</span> pts</h3>
-        </div>
-        <input
-          id="player2Input"
-          class="playerInput"
-          type="text"
-          placeholder="Keep on guessing.."
-        />
-      </section>
-
-    <section class="timer" id="timer">00:00</section>
-        
-
+    <!-- Right Panel - Category Grid -->
+    <section class="categoryGrid">
+        <button id="6" class="categoryBtn universe">Universe</button>
+        <button id="3" class="categoryBtn programming">Programming</button>
+        <button id="4" class="categoryBtn music">Music</button>
+        <button id="2" class="categoryBtn sport">Sport</button>
+        <button id="1" class="categoryBtn animals">Animals</button>
+        <button id="5" class="categoryBtn movies">Movies</button>
+    </section>
 </section>
-
-<footer>
-    <p>Testing</p>
-    <form id="subject-check">
-        <label>Test database</label>
-        <input type="number" name="subject" placeholder="1-6">
-        <button id="test-get-word">Test Get Word</button>
-        <button id="test-get-subject-words">Test Get Subject Words</button>
-        <button id="test-get-random-words-with-hints">Test Get Random Words With Hints</button>
-    </form>
-    <p id="message"></p>
-</footer>
-
 
 </body>
 </html>
