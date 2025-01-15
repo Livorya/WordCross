@@ -28,13 +28,14 @@ $('.categoryBtn').on('click', function(e) {
 $('#startBtn').on('click', function(e) {
     e.preventDefault();
     numberOfRounds = $('#roundInput').val();
-    startGame();
-    window.location.href = 'gameplayscreen.html' // directs to index.html on click
+    startGame(subjectId);
     //console.log(numberOfRounds);
 })
 
-async function startGame() {
-    getRandomWordsWithHints();
+async function startGame(subjectId) {
+    await getRandomWordsWithHints(subjectId);
+    console.log("Starting game with subjectId:", subjectId); // Verify subjectId
+    window.location.href = 'gameplayscreen.html';
 }
 
 async function getWord(e) {
@@ -60,9 +61,12 @@ async function getSubjectWords(e) {
 
 // Gets 6 random words with corresponding hints and then splits/pushes them into two separate arrays.
 // Displays _ _ _ _ & hints
-async function getRandomWordsWithHints(e) {
-    e.preventDefault();
-    const subject = $('[name="subject"]').val();
+async function getRandomWordsWithHints(subjectId) {
+    console.log("we're int!");
+    console.log(subjectId, numberOfRounds);
+
+    const subject = subjectId;
+    //$('[name="subject"]').val();
     const response = await fetch('/random-words-with-hints/' + subject);
     
     const data = await response.json(); // parses C#-list into JS-array using .json and stores in variable "data"
