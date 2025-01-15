@@ -141,6 +141,14 @@ function revealWord(guessWord) {
 }
 
 function incorrectGuess(guessWord) {
+    
+    guessWord = guessWord.toUpperCase();
+    if (incorrectWords.includes(guessWord)) {
+        return;
+    } else {
+        incorrectWords.push(guessWord);
+    }
+    
     $('#player1IncorrectWords').append(`<li/>${guessWord}`);
     
     // flash effect for incorrect guess
