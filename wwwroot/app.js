@@ -38,27 +38,6 @@ async function startGame(subjectId) {
     window.location.href = 'gameplayscreen.html';
 }
 
-async function getWord(e) {
-    e.preventDefault(); // not reload page on form submit
-    const subject = $('[name="subject"]').val();
-    const response = await fetch('/subject-check/' + subject); // get (read)
-    
-    const word = await response.text(); // Use .text() if your server returns plain text
-    $('#message').text('Single Word from subject:\n ' + word);
-}
-
-
-// Reads all words from input subject and puts them into a list
-async function getSubjectWords(e) {
-    e.preventDefault(); // not reload page on form submit
-    const subject = $('[name="subject"]').val();
-    const response = await fetch('/subject-words/' + subject); // get (read)
-    
-    // Use .text() if your server returns plain text
-    const words = await response.json(); //.json to convert C#list into JS array
-    $('#message').text('All Subject Words:\n ' + words.join(', ')); //joins/concatenates the words array into the string
-}
-
 // Gets 6 random words with corresponding hints and then splits/pushes them into two separate arrays.
 // Displays _ _ _ _ & hints
 async function getRandomWordsWithHints(subjectId) {
@@ -198,6 +177,29 @@ function updateTimer() {
     // Display the time
     document.getElementById('timer').innerText = `${formattedMinutes}:${formattedSeconds}`;
 }
+
+
+async function getWord(e) {
+    e.preventDefault(); // not reload page on form submit
+    const subject = $('[name="subject"]').val();
+    const response = await fetch('/subject-check/' + subject); // get (read)
+    
+    const word = await response.text(); // Use .text() if your server returns plain text
+    $('#message').text('Single Word from subject:\n ' + word);
+}
+
+
+// Reads all words from input subject and puts them into a list
+async function getSubjectWords(e) {
+    e.preventDefault(); // not reload page on form submit
+    const subject = $('[name="subject"]').val();
+    const response = await fetch('/subject-words/' + subject); // get (read)
+    
+    // Use .text() if your server returns plain text
+    const words = await response.json(); //.json to convert C#list into JS array
+    $('#message').text('All Subject Words:\n ' + words.join(', ')); //joins/concatenates the words array into the string
+}
+
 
 // Start the timer when the page loads
 /*
