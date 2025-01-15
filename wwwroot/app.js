@@ -175,6 +175,7 @@ async function nextround(e){
     incorrectWords = [];
     revealedWords = [];
     $('#player1IncorrectWords').empty();
+    $('.row').css('color', 'ghostwhite');
     await getRandomWordsWithHints();
 }
 
