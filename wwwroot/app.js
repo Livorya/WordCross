@@ -15,6 +15,7 @@ let revealedWords = []; // Store revealed words for checking/point-handling
 let currentScore = 0; // Store currentScore
 let subjectId = 0; // Stores subjectId from .categoryBtn in setupscreen
 let numberOfRounds = 0; // Stores #roundInput from setupscreen
+let incorrectWords = [];
 
 
 $('.categoryBtn').on('click', getSubjectId);
@@ -178,7 +179,14 @@ function checkWin() {
     }
 }
 
-
+$('.subject-modal').on('click', nextround);
+async function nextround(){
+    $('#subject-modal').css('display', 'none');
+    incorrectWords = [];
+    revealedWords = [];
+    $('#player1IncorrectWords').empty();
+    await getRandomWordsWithHints();
+}
 
  // Round timer
 let seconds = 0;
