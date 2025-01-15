@@ -173,6 +173,14 @@ function checkWin() {
         // Update display for rounds left
         $('#rounds-left').text(roundsLeft - 1); // Show remaining rounds after current
         
+        // Change button appearance if it's the last round
+        if (roundsLeft <= 1) {
+            $('#startRound')
+                .text('End Game')
+                .css('background-color', 'var(--incorrect-red-700)')
+                .css('box-shadow', '0 4px 0 rgba(0, 0, 0, 0.4)');
+        }
+        
         // Show the modal
         $('#subject-modal').css('display', 'flex');
     }
@@ -190,8 +198,8 @@ async function nextRound(e){
     }
     
     $('#subject-modal').css('display', 'none');
-    incorrectWords = [];
-    revealedWords = [];
+    incorrectWords = []; // reset incorrectwords
+    revealedWords = []; // reset revealedwords
     $('#player1IncorrectWords').empty();
     $('.row').css('color', 'ghostwhite'); //resets color of text in rows
     
