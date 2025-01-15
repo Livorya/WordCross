@@ -175,7 +175,7 @@ async function nextround(e){
     incorrectWords = [];
     revealedWords = [];
     $('#player1IncorrectWords').empty();
-    $('.row').css('color', 'ghostwhite');
+    $('.row').css('color', 'ghostwhite'); //resets color of text in rows
     await getRandomWordsWithHints();
 }
 
@@ -198,8 +198,7 @@ function updateTimer() {
 }
 
 // Start the timer when the page loads
-/*
+
 window.onload = function () {
     setInterval(updateTimer, 1000);
 };
-*/
