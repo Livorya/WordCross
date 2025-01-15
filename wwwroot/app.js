@@ -1,9 +1,3 @@
-// Button test area:
-$('#test-get-word').on('click', getWord); // Button for getWord
-$('#test-get-subject-words').on('click', getSubjectWords); // Button for getSubjectWords
-$('#test-get-random-words-with-hints').on('click', getRandomWordsWithHints);
-
-$('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord form
 
 // load page and run startGame()
 window.addEventListener("load", (event) => {  startGame(); });
@@ -17,6 +11,9 @@ let subjectId = 0; // Stores subjectId from .categoryBtn in setupscreen
 let numberOfRounds = 0; // Stores #roundInput from setupscreen
 let incorrectWords = [];
 
+ // Round timer
+ let seconds = 0;
+ let minutes = 0;
 
 $('.categoryBtn').on('click', getSubjectId);
     
@@ -25,7 +22,6 @@ async function getSubjectId(e) {
     $('.categoryBtn').css('color', 'white');
     $(this).css('color', '#471980');
     subjectId =  $(this).attr('id');
-    //console.log(subjectId);
 }
 
 $('#startGame').on('click', startButton);
@@ -34,14 +30,9 @@ async function startButton(e) {
     e.preventDefault();
     numberOfRounds = $('#roundInput').val();
     
-    console.log("subjectId:", subjectId); // Verify subjectId
-    console.log("rounds:", numberOfRounds);
-    
     // Store it in localstorage 
     window.localStorage.setItem('keepId', subjectId);
     window.localStorage.setItem('keepRounds', numberOfRounds);
-
-    //await startGame();
 
     window.location.href = 'gameplayscreen.html';
 }
@@ -142,7 +133,6 @@ function revealWord(guessWord) {
 }
 
 function incorrectGuess(guessWord) {
-    
     guessWord = guessWord.toUpperCase();
     if (incorrectWords.includes(guessWord)) {
         return;
@@ -173,7 +163,6 @@ function updateScore(score) {
 
 function checkWin() {
     if (revealedWords.length === words.length) {
-        console.log("Congratulations! You won!!");
         // Show the modal with css display flex
         $('#subject-modal').css('display', 'flex');
     }
@@ -188,10 +177,6 @@ async function nextround(e){
     $('#player1IncorrectWords').empty();
     await getRandomWordsWithHints();
 }
-
- // Round timer
-let seconds = 0;
-let minutes = 0;
 
 function updateTimer() {
     seconds++;
@@ -211,67 +196,9 @@ function updateTimer() {
     document.getElementById('timer').innerText = `${formattedMinutes}:${formattedSeconds}`;
 }
 
-
-async function getWord(e) {
-    e.preventDefault(); // not reload page on form submit
-    const subject = $('[name="subject"]').val();
-    const response = await fetch('/subject-check/' + subject); // get (read)
-    
-    const word = await response.text(); // Use .text() if your server returns plain text
-    $('#message').text('Single Word from subject:\n ' + word);
-}
-
-
-// Reads all words from input subject and puts them into a list
-async function getSubjectWords(e) {
-    e.preventDefault(); // not reload page on form submit
-    const subject = $('[name="subject"]').val();
-    const response = await fetch('/subject-words/' + subject); // get (read)
-    
-    // Use .text() if your server returns plain text
-    const words = await response.json(); //.json to convert C#list into JS array
-    $('#message').text('All Subject Words:\n ' + words.join(', ')); //joins/concatenates the words array into the string
-}
-
-
 // Start the timer when the page loads
 /*
 window.onload = function () {
     setInterval(updateTimer, 1000);
 };
-*/
-
-
-/*
-* #Id index: *
-
-Gameplay Screen:
-subjectTitle - <h1> fetches current subject title from databate and displays it at the top of the gameboard
-
-player1IncorrectWords - <ul> that contains player1 incorrect guesses
-player1Score - <span> that contains player1 score
-player1Input - <input> field for player1 guesses -> incorrect words will get added to (#player1IncorrectWords)
-
-player2IncorrectWords - <ul> that contains player2 incorrect guesses
-player2Score - <span> that contains player2 score
-player2Input - <input> field for player2 guesses -> incorrect words will get added to (#player2IncorrectWords)
-
-timer - <span> that displays time left
-
-
-Setup Screen:
-1playerBtn - Click for 1player mode
-2playerBtn - Click for 2player mode
-
-roundInput - input for #Rounds mode
-pointGoalInput - input for #PointGoal mode
-startBtn - button for starting the game
-
-universeBtn - category-button for Universe
-programmingBtn - category-button for Programming
-musicBtn - category-button for Music
-sportBtn - category-button for Sport
-animalsBtn - category-button for Animals
-moviesBtn - category-button for Movies
-
 */
