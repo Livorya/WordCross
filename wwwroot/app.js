@@ -6,7 +6,6 @@ $('#test-get-random-words-with-hints').on('click', getRandomWordsWithHints);
 $('#subject-check').on('submit', getSubjectWords) // onsubmit for the testWord form
 
 
-
 // Upper Scope variables:
 let words = []; // Store 6 random words in this array
 let hints = []; // Store hints correlated to content of words-array
@@ -38,8 +37,16 @@ async function getSubjectWords(e) {
 // Displays _ _ _ _ & hints
 async function getRandomWordsWithHints(e) {
     e.preventDefault();
-    const subject = $('[name="subject"]').val();
-    const response = await fetch('/random-words-with-hints/' + subject);
+    // subject_id is from the temporary testing input field that returns the subject_id 
+    const subject_id = $('[name="subject"]').val();
+    const subject_name = $('.' + subject_id).text();
+    const subject_color = $('.' + subject_id).css('background-color');
+    console.log(subject_id + ': ' + subject_name + ': ' + subject_color);
+    
+    $('#subjectTitle').text(subject_name);
+    $('#subjectTitle').css('background-color', subject_color);
+    
+    const response = await fetch('/random-words-with-hints/' + subject_id);
 
     const data = await response.json(); // parses C#-list into JS-array using .json and stores in variable "data"
 
