@@ -75,7 +75,7 @@ ul {
 }
 #subject-modal-content {
     background-color: var(--purple-800);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(59, 13, 90, 0.8);
     border-radius: 50px;
     margin: 0 auto;
     width: 100%;
@@ -88,7 +88,20 @@ ul {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
+.completion-time-container {
+    text-align: center;
+    margin: 5px 0;
+    padding: 0px;
+}
 
+.completion-time-container h3 {
+}
+
+.time-display {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--green-700);
+}
 /* */
 
 .header {
@@ -586,6 +599,8 @@ background-color: var(--green-700);
         min-height: 600px;
     }
 } 
+
+
 
 
 

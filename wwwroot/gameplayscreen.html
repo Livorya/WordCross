@@ -25,8 +25,12 @@
 
     <!-- Modal -->
     <section id="subject-modal" class="modal">
-        <article id="subject-modal-content">
-            <h1>Congratulations!</h1>
+        <div id="subject-modal-content">
+            <h1><u>Round Complete!</u></h1>
+            <div class="completion-time-container">
+                <h2>Completion Time:</h2>
+                <span id="completion-time" class="time-display">00:00</span>
+            </div>
             <h4>Choose your next subject:</h4>
             <section class="categoryModalGrid">
                 <button id="6" class="categoryBtn universe">Universe</button>
@@ -36,9 +40,8 @@
                 <button id="1" class="categoryBtn animals">Animals</button>
                 <button id="5" class="categoryBtn movies">Movies</button>
             </section>
-            <!-- Start Button -->
             <button id="startRound" class="startBtn">Start!</button>
-        </article>
+        </div>
     </section>
 
     <!-- Player 1 container -->

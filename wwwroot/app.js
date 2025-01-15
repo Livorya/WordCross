@@ -1,4 +1,3 @@
-
 // load page and run startGame()
 window.addEventListener("load", (event) => {  startGame(); });
 
@@ -163,7 +162,14 @@ function updateScore(score) {
 
 function checkWin() {
     if (revealedWords.length === words.length) {
-        // Show the modal with css display flex
+        
+        // Format the completion time
+        const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+        const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+        // Display completion time in modal
+        $('#completion-time').text(`${formattedMinutes}:${formattedSeconds}`);
+        
+        // Show the modal
         $('#subject-modal').css('display', 'flex');
     }
 }
@@ -176,6 +182,11 @@ async function nextround(e){
     revealedWords = [];
     $('#player1IncorrectWords').empty();
     $('.row').css('color', 'ghostwhite'); //resets color of text in rows
+    
+    // Reset timer
+    seconds = 0;
+    minutes = 0;
+    
     await getRandomWordsWithHints();
 }
 
