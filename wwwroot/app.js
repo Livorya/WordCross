@@ -28,7 +28,7 @@ async function getSubjectId(e) {
     //console.log(subjectId);
 }
 
-$('#startBtn').on('click', startButton);
+$('#startGame').on('click', startButton);
 
 async function startButton(e) {
     e.preventDefault();
@@ -179,8 +179,9 @@ function checkWin() {
     }
 }
 
-$('.subject-modal').on('click', nextround);
-async function nextround(){
+$('#startRound').on('click', nextround);
+async function nextround(e){
+    e.preventDefault();
     $('#subject-modal').css('display', 'none');
     incorrectWords = [];
     revealedWords = [];

@@ -440,7 +440,7 @@ ul {
                 background-color: var(--player-pink-800);
             }
 
-#startBtn {
+.startBtn {
     background-color: var(--green-700);
     color: white;
     padding: 1rem 4rem;
@@ -454,13 +454,13 @@ ul {
     font-family: 'Fredoka', cursive;
 }
 
-    #startBtn:hover {
+    .startBtn:hover {
         background-color: var(--green-800);
         transform: translateY(-5px);
         box-shadow: 0 8px 0 rgba(0, 0, 0, 0.4);
     }
 
-        #startBtn:active {
+        .startBtn:active {
             transform: translateY(0);
             box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
             background-color: var(--green-700);
