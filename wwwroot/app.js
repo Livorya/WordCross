@@ -22,16 +22,20 @@ $('.categoryBtn').on('click', function(e) {
     $('.categoryBtn').css('color', 'white');
     $(this).css('color', '#471980');
     subjectId =  $(this).attr('id');
-    console.log(subjectId);
+    //console.log(subjectId);
 })
 // Event listener for startBtn
 $('#startBtn').on('click', function(e) {
     e.preventDefault();
     numberOfRounds = $('#roundInput').val();
-    console.log(numberOfRounds);
+    window.location.href = 'index.html' // directs to index.html on click
+    //console.log(numberOfRounds);
 })
 
+async function startGame() {
 
+
+}
 
 async function getWord(e) {
     e.preventDefault(); // not reload page on form submit
