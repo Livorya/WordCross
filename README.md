@@ -19,20 +19,6 @@
 - **We only merge with dev when all conflicts are resolved**
 - **We only merge with main when all conflicts are resolved, and we have tested and working code**
 
-## Menu Rules
-- **When creating a feature branch for a menu we write `feature/menu/<name>` (ex. `feature/menu/customer`)**
-- **When we create a feature branch for a submenu we write `feature/menu/<name>/<subname>` (ex. `feature/menu/customer/mybookings`)**
-- **Class names should be named so the first word is the type of menu, and the second word is “menu” (ex. `BookingMenu` or `CustomerMenu`)**
-
-
-# Structure
-### Enums
-**Table:room -> Column:size**
-`'Single','Double','Triple','Quad'`
-
-**Table:rating -> Column:rating**
-`'*','**','***','****','*****'`
-
 
 # HOW TO USE GIT
 
