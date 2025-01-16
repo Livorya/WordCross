@@ -194,6 +194,10 @@ async function nextRound(e){
     if (roundsLeft <= 0) {
         // no rounds left, back to setup screen
         window.location.href = 'index.html';
+        $('#startRound')
+            .text('Start!')
+            .css('background-color', 'var(--green-700)')
+            .css('box-shadow', '0 4px 0 rgba(0, 0, 0, 0.4)');
         return;
     }
     
